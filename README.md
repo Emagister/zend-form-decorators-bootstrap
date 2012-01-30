@@ -78,5 +78,6 @@ class IndexController extends Zend_Controller_Action
 And finally from the view layer
 
 ```php
+<!-- /application/views/scripts/index/index.phtml -->
 <?php echo $this->form; ?>
 ```
