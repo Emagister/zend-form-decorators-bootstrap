@@ -17,7 +17,7 @@
 class Twitter_Bootstrap_View_Helper_FormMultiCheckbox extends Zend_View_Helper_FormMultiCheckbox
 {
     public function formMultiCheckbox($name, $value = null, $attribs = null,
-                                      $options = null, $listsep = "<br />\n")
+                                      $options = null, $listsep = '')
     {
         $info = $this->_getInfo($name, $value, $attribs, $options, $listsep);
         extract($info); // name, value, attribs, options, listsep, disable

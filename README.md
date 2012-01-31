@@ -1,6 +1,7 @@
 # Zend_Form decorators for Twitter's Bootstrap #
 
-This is a set of Zend_Form decorators and helpers that help to render the markup needed to display
+At Emagister we are using Twitter's Bootstrap for some internal tools. This tools use [Twitter's Bootstrap](https://twitter.github.com/bootstrap)
+UI based on some Decorators we've created. This is a set of Zend_Form decorators and helpers that help to render the markup needed to display
 any Zend_Form as a Twitter Bootstrap's form.
 
 ## Cool, but how? ##

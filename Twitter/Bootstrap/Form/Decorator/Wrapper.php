@@ -18,7 +18,6 @@
  */
 class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstract
 {
-
     /**
      * Renders a form element decorating it with the Twitter's Bootstrap markup
      *

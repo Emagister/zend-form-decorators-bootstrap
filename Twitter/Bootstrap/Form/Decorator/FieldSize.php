@@ -27,7 +27,15 @@ class Twitter_Bootstrap_Form_Decorator_FieldSize extends Zend_Form_Decorator_Abs
             || $element instanceof Zend_Form_Element_Textarea)
             && false !== ($size = $element->getAttrib('size'))
         ) {
-            $element->setAttrib('class', $element->getAttrib('class') . ' ' . (((int) $size > 1 && (int) $size < 12) ? 'span' . $size : ''));
+            $classes = explode(' ', $element->getAttrib('class'));
+            if ((int) $size > 1 && (int) $size < 12) {
+                $classes[] = 'span' . $size;
+            }
+
+            $element->setAttrib('class', implode(' ', $classes));
+            $element->setAttrib('size', null);
         }
+
+        return $content;
     }
 }
