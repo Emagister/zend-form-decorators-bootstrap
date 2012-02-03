@@ -100,3 +100,22 @@ the look and feel of the form.
 
 * __submitLabel__ (*string*)
   If the submit button will be rendered the label can be customized by passing the **submitLabel** option. _(defaults to **Submit**)_
+
+```php
+<?php
+
+// Normal search form
+$searchForm = new Twitter_Bootstrap_Form_Search(array(
+    'renderInNavBar' => false,
+    'inputName'      => 'q',
+    'submitLabel'    => 'Search!'
+));
+
+// Navigation bar search form
+$searchForm = new Twitter_Bootstrap_Form_Search(array(
+    'renderInNavBar' => true,
+    'pullItRight'    => true
+    'inputName'      => 'q',
+    'submitLabel'    => 'Search!'
+));
+```
