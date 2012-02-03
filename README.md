@@ -259,7 +259,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
 #### Addon decorator ####
 
 This decorator allows specify some content that will be *appended* or *prepended* to the given input. It can render text,
-a glyphicon or a checkboxes. To accomplish this it supports several options that will be set to the form element itself.
+a glyphicon or a checkbox. To accomplish this it supports several options that will be set to the form element itself.
 
 * __prepend__ (*string*)
   Prepends the content of the option to the generated field form.
@@ -274,3 +274,24 @@ or a glyphicon. When
 
 * Zend_Config or array specified, it will generate a checkbox. **Note** that if the key "_active_" is passed inside the array or
   inside the Zend_Config instance, it will render the prepended or appended box with green background.
+
+```php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
+{
+    public function init()
+    {
+        $this->addElement('text', 'input1', array(
+            'label'   => 'E-mail',
+            'prepend' => '@'
+        ));
+
+        $this->addElement('text', 'input2', array(
+            'label' => '2nd E-mail',
+            'prepend' => array(
+                'name' => 'internalCheckbox1',
+                'active' => true
+            )
+        ));
+    }
+}
+```
