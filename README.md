@@ -276,6 +276,7 @@ or a glyphicon. When
   inside the Zend_Config instance, it will render the prepended or appended box with green background.
 
 ```php
+<?php
 class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
 {
     public function init()
