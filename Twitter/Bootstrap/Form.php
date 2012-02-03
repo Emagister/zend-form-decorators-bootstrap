@@ -21,7 +21,6 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     /**
      * Class constants
      */
-    const DISPOSITION_VERTICAL   = 'vertical';
     const DISPOSITION_HORIZONTAL = 'horizontal';
     const DISPOSITION_INLINE     = 'inline';
     const DISPOSTION_SEARCH      = 'search';
@@ -39,39 +38,28 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     public function __construct($options = null)
     {
         $this->getView()->addHelperPath(
-            ROOT_PATH . '/library/Emagister/Twitter/Bootstrap/View/Helper',
+            'Twitter/Bootstrap/View/Helper',
             'Twitter_Bootstrap_View_Helper'
         );
 
         $this->addPrefixPath(
             'Twitter_Bootstrap_Form_Element',
-            ROOT_PATH . '/library/Emagister/Twitter/Bootstrap/Form/Element',
+            'Twitter/Bootstrap/Form/Element',
             'element'
         );
 
         $this->addElementPrefixPath(
             'Twitter_Bootstrap_Form_Decorator',
-            ROOT_PATH . '/library/Emagister/Twitter/Bootstrap/Form/Decorator',
+            'Twitter/Bootstrap/Form/Decorator',
             'decorator'
         );
 
         $this->addDisplayGroupPrefixPath(
             'Twitter_Bootstrap_Form_Decorator',
-            ROOT_PATH . '/library/Emagister/Twitter/Bootstrap/Form/Decorator'
+            'Twitter/Bootstrap/Form/Decorator'
         );
 
         $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
-
-        // Form disposition
-        if (
-            array_key_exists('disposition', $options)
-            && in_array($options['disposition'], array(self::DISPOSITION_VERTICAL, self::DISPOSITION_HORIZONTAL, self::DISPOSITION_INLINE, self::DISPOSTION_SEARCH))
-            && self::DISPOSITION_VERTICAL != $options['disposition']
-        ) {
-            $this->setDisposition($options['disposition']);
-            $this->_addClassNames('form-' . $options['disposition']);
-            unset($options['disposition']);
-        }
 
         parent::__construct($options);
     }
@@ -85,23 +73,14 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             in_array(
                 $disposition,
                 array(
-                    self::DISPOSITION_VERTICAL,
                     self::DISPOSITION_HORIZONTAL,
                     self::DISPOSITION_INLINE,
                     self::DISPOSTION_SEARCH
                 )
             )
         ) {
-            $this->_disposition = $disposition;
+            $this->_addClassNames('form-' . $disposition);
         }
-    }
-
-    /**
-     * @return string
-     */
-    public function getDisposition()
-    {
-        return $this->_disposition;
     }
 
     /**

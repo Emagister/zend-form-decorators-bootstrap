@@ -22,6 +22,8 @@ abstract class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form_
     {
         parent::__construct($options);
 
+        $this->setDisposition(self::DISPOSITION_HORIZONTAL);
+
         $this->setElementDecorators(array(
             array('FieldSize'),
             array('ViewHelper'),

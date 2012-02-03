@@ -23,6 +23,8 @@ abstract class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
     {
         parent::__construct($options);
 
+        $this->setDisposition(self::DISPOSITION_INLINE);
+
         $this->setElementDecorators(array(
             array('FieldSize'),
             array('ViewHelper'),

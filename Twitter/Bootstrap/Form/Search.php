@@ -13,6 +13,7 @@
  *
  * @category Forms
  * @package Twitter_Bootstrap
+ * @subpackage Form
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
 final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
@@ -20,6 +21,8 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
     public function __construct($options = null)
     {
         parent::__construct($options);
+
+        $this->setDisposition(self::DISPOSTION_SEARCH);
 
         $renderButton = true;
         if (isset($options['renderInNavBar']) && true === $options['renderInNavBar']) {
@@ -36,15 +39,16 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
         }
 
         // Add the search input
-        $this->addElement('text', 'searchQuery', array(
+        $inputName = isset($options['inputName']) ? $options['inputName'] : 'searchQuery';
+        $this->addElement('text', $inputName, array(
             'class' => 'search-query'
         ));
 
         if ($renderButton) {
-            $buttonLabel = isset($options['submitLabel']) ? $options['submitLabel'] : null;
+            $buttonLabel = isset($options['submitLabel']) ? $options['submitLabel'] : 'Submit';
             $this->addElement('submit', 'submit', array(
                 'class' => 'btn',
-                'label' => $buttonLabel ?: 'Submit'
+                'label' => $buttonLabel
             ));
         }
     }
