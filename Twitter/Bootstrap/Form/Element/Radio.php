@@ -1,21 +1,28 @@
 <?php
 /**
- * Twitter's Bootstrap radio button definition
+ * Form field definition
  *
  * @category Forms
- * @package Emagister_Twitter_Bootstrap_Form
+ * @package Twitter_Bootstrap_Form
  * @subpackage Element
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
  * Twitter's Bootstrap radio buttons
  *
  * @category Forms
- * @package Emagister_Twitter_Bootstrap_Form
+ * @package Twitter_Bootstrap_Form
  * @subpackage Element
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Element_Radio extends Zend_Form_Element_Radio
 {
+    /**
+     * Remove all the default decorator for this element
+     *
+     * @return Twitter_Bootstrap_Form_Element_Radio
+     */
     public function loadDefaultDecorators()
     {
         return $this;

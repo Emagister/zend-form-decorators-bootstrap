@@ -1,18 +1,20 @@
 <?php
 /**
- * A Zend_View helper definition
+ * View helper definition
  *
  * @category Helpers
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
- * Renders a list of checkboxes the Twitter Bootstrap's way.
+ * A helper to render a set of checkboxes
  *
  * @category Helpers
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_View_Helper_FormMultiCheckbox extends Zend_View_Helper_FormMultiCheckbox
 {
@@ -40,6 +42,12 @@ class Twitter_Bootstrap_View_Helper_FormMultiCheckbox extends Zend_View_Helper_F
                 unset($attribs[$key]);
             }
         }
+
+        if (!array_key_exists('class', $label_attribs)) {
+            $label_attribs['class'] = '';
+        }
+
+        $label_attribs['class'] = 'checkbox ' . $label_attribs['class'];
 
         $labelPlacement = 'append';
         foreach ($label_attribs as $key => $val) {
@@ -123,13 +131,13 @@ class Twitter_Bootstrap_View_Helper_FormMultiCheckbox extends Zend_View_Helper_F
                     . '</label>';
 
             // add to the array of radio buttons
-            $list[] = '<li>' . $radio . '</li>';
+            $list[] = $radio;
         }
 
         // done!
         $xhtml .= implode($listsep, $list);
 
-        return '<ul class="inputs-list">' . $xhtml . '</ul>';
+        return $xhtml;
     }
 
 }

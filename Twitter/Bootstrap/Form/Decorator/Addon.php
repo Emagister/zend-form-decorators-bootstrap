@@ -1,8 +1,28 @@
 <?php
+/**
+ * Defines a decorator to render the form field addons
+ *
+ * @category Form
+ * @package Twitter_Bootstrap_Form
+ * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
+ */
 
-
-class Emagister_Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstract
+/**
+ * Renders an form field with an add on (appended or prepended)
+ *
+ * @category Form
+ * @package Twitter_Bootstrap_Form
+ * @subpackage Decorator
+ * @see http://twitter.github.com/bootstrap/base-css.html#forms
+ * @author Christian Soronellas <csoronellas@emagister.com>
+ */
+class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstract
 {
+    /**
+     * @param string $content
+     * @return string
+     */
     public function render($content)
     {
         $prepend = $this->getElement()->getAttrib('prepend');

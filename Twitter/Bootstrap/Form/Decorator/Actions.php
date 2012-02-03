@@ -1,23 +1,25 @@
 <?php
 /**
- * Zend_Form decorator definition
- * 
- * @category Forms
- * @package Twitter_Bootstrap_Form
- * @subpackage Decorator
- */
-
-/**
- * A decorator to render the form submission buttons
+ * Decorator definition for the submit buttons
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
  * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
+ */
+
+/**
+ * A decorator to render the submit form buttons
+ *
+ * @category Forms
+ * @package Twitter_Bootstrap_Form
+ * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Decorator_Actions extends Zend_Form_Decorator_Abstract
 {
     /**
-     * Build the internal buttons
+     * Render all the buttons
      *
      * @return string
      */
@@ -36,14 +38,14 @@ class Twitter_Bootstrap_Form_Decorator_Actions extends Zend_Form_Decorator_Abstr
     }
 
     /**
-     * Renders the actions div
+     * Renders the content
      *
-     * @param $content
+     * @param string $content
      * @return string
      */
     public function render($content)
     {
-        return '<div class="actions">
+        return '<div class="form-actions">
                     ' . $this->buildButtons() . '
                 </div>';
     }

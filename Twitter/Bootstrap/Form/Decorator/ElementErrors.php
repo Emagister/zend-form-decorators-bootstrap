@@ -1,21 +1,27 @@
 <?php
 /**
- * Zend_Form decorator definition
+ * Defines a decorator to handle form field errors
  *
- * @category Forms
+ * @category Form
  * @package Twitter_Bootstrap_Form
  * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
- * Renders a single element error
+ * A decorator to render the form element errors
  *
- * @category Forms
+ * @category Form
  * @package Twitter_Bootstrap_Form
  * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Decorator_ElementErrors extends Zend_Form_Decorator_Abstract
 {
+    /**
+     * @param string $content
+     * @return string
+     */
     public function render($content)
     {
         if (!$this->getElement()->hasErrors()) {

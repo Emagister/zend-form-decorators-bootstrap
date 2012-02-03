@@ -1,19 +1,20 @@
 <?php
 /**
- * Zend_Form decorator definition
+ * Form decorator definition
  *
  * @category Forms
- * @package Twitter_Bootstrap_Form
- * @subpackage Decorator
+ * @package Twitter_Bootstrap_Form_Decorator
+ * @subpackage FormElements
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
- * Renders the body of the form, adding the "error" class to each
- * form element if needed
+ * Renders the form body
  *
  * @category Forms
- * @package Twitter_Bootstrap_Form
- * @subpackage Decorator
+ * @package Twitter_Bootstrap_Form_Decorator
+ * @subpackage FormElements
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Decorator_FormElements extends Zend_Form_Decorator_FormElements
 {

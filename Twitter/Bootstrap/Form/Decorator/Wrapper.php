@@ -3,8 +3,8 @@
  * Form decorator definition
  *
  * @category Forms
- * @package Emagister_Form_Decorator_Twitter
- * @subpackage Bootstrap
+ * @package Twitter_Bootstrap_Form
+ * @subpackage Decorator
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
@@ -12,8 +12,8 @@
  * Defines a decorator to wrap all the Bootstrap form elements
  *
  * @category Forms
- * @package Emagister_Form_Decorator_Twitter
- * @subpackage Bootstrap
+ * @package Twitter_Bootstrap_Form
+ * @subpackage Decorator
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstract
@@ -29,7 +29,7 @@ class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstr
     {
         $hasErrors = $this->getElement()->hasErrors();
 
-        return '<div class="clearfix' . (($hasErrors) ? ' error' : '') . '">
+        return '<div class="control-group' . (($hasErrors) ? ' error' : '') . '">
                     ' . $content . '
                 </div>';
     }

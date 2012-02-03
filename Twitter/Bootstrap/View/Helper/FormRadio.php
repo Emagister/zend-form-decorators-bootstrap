@@ -3,18 +3,20 @@
  * View helper definition
  *
  * @category Helpers
- * @package Emagister_Twitter_Bootstrap_View
+ * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
  * Helper to generate a set of radio button elements
  *
  * @category Helpers
- * @package Emagister_Twitter_Bootstrap_View
+ * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Emagister_Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormElement
+class Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormElement
 {
     /**
      * Input type to use
@@ -70,6 +72,12 @@ class Emagister_Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper
                 unset($attribs[$key]);
             }
         }
+
+        if (!array_key_exists('class', $label_attribs)) {
+            $label_attribs['class'] = '';
+        }
+
+        $label_attribs['class'] = (strlen($label_attribs['class']) > 0 ? ' ' : '') . 'radio';
 
         $labelPlacement = 'append';
         foreach ($label_attribs as $key => $val) {
@@ -154,11 +162,11 @@ class Emagister_Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper
                     . '</label>';
 
             // add to the array of radio buttons
-            $list[] = '<li>' . $radio . '</li>';
+            $list[] = $radio;
         }
 
         // done!
-        $xhtml .= '<ul class="inputs-list">' . implode($listsep, $list) . '</ul>';
+        $xhtml .= implode($listsep, $list);
 
         return $xhtml;
     }

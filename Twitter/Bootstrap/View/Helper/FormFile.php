@@ -5,8 +5,8 @@
  * @category Forms
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
-
 
 /**
  * Helper to generate a "file" element with the Twitter's Bootstrap UI
@@ -14,6 +14,7 @@
  * @category Forms
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_View_Helper_FormFile extends Zend_View_Helper_FormFile
 {

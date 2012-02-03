@@ -1,32 +1,33 @@
 <?php
 /**
- * Zend_Form decorator definition
+ * Form decorator definition
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
  * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 
 /**
- * Adds the size of a form element to the class attribute
+ * Sets the class to its appropiate size (span1, span2, ...)
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
  * @subpackage Decorator
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_Form_Decorator_FieldSize extends Zend_Form_Decorator_Abstract
 {
+    /**
+     * @param string $content
+     * @return mixed
+     */
     public function render($content)
     {
         $element = $this->getElement();
 
         // Only apply this decorator to the Inputs, Selects or Textareas
-        if (($element instanceof Zend_Form_Element_Password
-            || $element instanceof Zend_Form_Element_Select
-            || $element instanceof Zend_Form_Element_Text
-            || $element instanceof Zend_Form_Element_Textarea)
-            && false !== ($size = $element->getAttrib('size'))
-        ) {
+        if (false !== ($size = $element->getAttrib('size'))) {
             $classes = explode(' ', $element->getAttrib('class'));
             if ((int) $size > 1 && (int) $size < 12) {
                 $classes[] = 'span' . $size;

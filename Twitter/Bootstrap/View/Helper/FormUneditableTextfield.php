@@ -5,8 +5,8 @@
  * @category Forms
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
-
 
 /**
  * Helper to generate an uneditable form textfield.
@@ -14,6 +14,7 @@
  * @category Forms
  * @package Twitter_Bootstrap_View
  * @subpackage Helper
+ * @author Christian Soronellas <csoronellas@emagister.com>
  */
 class Twitter_Bootstrap_View_Helper_FormUneditableTextfield extends Zend_View_Helper_FormElement
 {
