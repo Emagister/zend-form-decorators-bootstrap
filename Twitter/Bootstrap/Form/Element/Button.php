@@ -33,6 +33,9 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
     public function __construct($spec, $options = null)
     {
         if (isset($options['icon'])) {
+            // Disable automatic label escaping
+            $options['escape'] = false;
+
             $this->_icon = 'icon-' . $options['icon'];
 
             if (isset($options['whiteIcon']) && true === $options['whiteIcon']) {

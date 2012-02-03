@@ -111,11 +111,113 @@ $searchForm = new Twitter_Bootstrap_Form_Search(array(
     'submitLabel'    => 'Search!'
 ));
 
+echo $searchForm;
+
 // Navigation bar search form
-$searchForm = new Twitter_Bootstrap_Form_Search(array(
+$mavbarSearchForm = new Twitter_Bootstrap_Form_Search(array(
     'renderInNavBar' => true,
     'pullItRight'    => true
     'inputName'      => 'q',
     'submitLabel'    => 'Search!'
 ));
+
+echo $navbarSearchForm;
+```
+
+### DisplayGroups ###
+
+The base class ```Twitter_Bootstrap_Form``` (so inherently, all its subclasses) sets the custom class ```Twitter_Bootstrap_Form_DisplayGroup```
+as a base class for handling vitual field groups. So there is no need for special coding here.
+
+```php
+<?php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
+{
+    public function init()
+    {
+        $this->addElement('text', 'email', array(
+            'label' => 'E-mail'
+        ));
+
+        $this->addElement('text', 'password', array(
+            'label' => 'Password'
+        ));
+
+        $this->addDisplayGroup(
+            array('email', 'password'),
+            'login',
+            array(
+                'legend' => 'Account info'
+            )
+        );
+    }
+}
+```
+
+### New form elements ###
+
+In order to leverage the astonishing look and feel of Twitter Bootstrap buttons, a new special form element has been created in
+order to set all the appropiate *class* names.
+
+#### Submit button ####
+
+To configure the look and feel of a submit button there are several options supported
+
+* __buttonType__ (*string*)
+  This option specifies the button type that will be rendered. Twitter Bootstrap 2.0.0 supports six button types out of the box
+  * __default__ (obviously, the default button style)
+  * __primary__
+  * __info__
+  * __success__
+  * __warning__
+  * __danger__
+
+* __disabled__ (*boolean*)
+  If _true_, the submit button will be rendered as disabled.
+
+```php
+<?php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Vertical
+{
+    public function init()
+    {
+        // All the other form stuff
+
+        $this->addElement('submit', 'submit', array(
+            'buttonType' => Twitter_Bootstrap_Form_Element_Submit::BUTTON_SUCCESS,
+            'disabled'   => true,
+            'label'      => 'Send e-mail!'
+        ));
+    }
+}
+```
+
+#### Button ####
+
+This form element is an extension of the submit button in order to provide a way to render HTML inside the button. So it's
+providing the same features as the submit button plus the hability to render a [glyphicon](http://twitter.github.com/bootstrap/base-css.html#icons)
+as a button label. Let's see it.
+
+* __icon__ (*string*)
+  This option specify the icon used inside the button.
+
+* __whiteIcon__ (*boolean*)
+  This option specify whether the icon should be rendered in white color. _(default **false**)_
+
+```php
+<?php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
+{
+    public function init()
+    {
+        // All the other form stuff
+
+        $this->addElement('button', 'submit', array(
+            'label'      => 'Send e-mail!',
+            'buttonType' => Twitter_Bootstrap_Form_Element_Submit::BUTTON_SUCCESS,
+            'icon'       => 'ok',
+            'whiteIcon'  => true
+        ));
+    }
+}
 ```

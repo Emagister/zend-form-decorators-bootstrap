@@ -47,7 +47,7 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
                 )
             )
         ) {
-            $classes[] = 'btn-primary';
+            $classes[] = 'btn-' . $options['button-type'];
             unset($options['button-type']);
         }
 
