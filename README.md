@@ -127,7 +127,7 @@ echo $navbarSearchForm;
 ### DisplayGroups ###
 
 The base class ```Twitter_Bootstrap_Form``` (so inherently, all its subclasses) sets the custom class ```Twitter_Bootstrap_Form_DisplayGroup```
-as a base class for handling vitual field groups. So there is no need for special coding here.
+as a base class for handling virtual field groups. So there is no need for special coding here.
 
 ```php
 <?php
@@ -221,3 +221,56 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
     }
 }
 ```
+
+### Decorators ###
+
+#### Actions decorator ####
+
+The purpose of this decorator is to set the appropiate markup to render the form's submit buttons.
+
+```php
+<?php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
+{
+    public function init()
+    {
+        $this->addElement('button', 'submit', array(
+            'label'         => 'Submit!',
+            'type'          => 'submit'
+        ));
+
+        $this->addElement('button', 'submit', array(
+            'label'         => 'Reset',
+            'type'          => 'reset'
+        ));
+
+        $this->addDisplayGroup(
+            array('submit', 'reset'),
+            'actions',
+            array(
+                'disableLoadDefaultDecorators' => true,
+                'decorators' => array('Actions')
+            )
+        );
+    }
+}
+```
+
+#### Addon decorator ####
+
+This decorator allows specify some content that will be *appended* or *prepended* to the given input. It can render text,
+a glyphicon or a checkboxes. To accomplish this it supports several options that will be set to the form element itself.
+
+* __prepend__ (*string*)
+  Prepends the content of the option to the generated field form.
+
+* __append__ (*string*)
+  Appends the content of the option to the generated field form.
+
+The content of the both options could be a string containing some text, an array or an instance of the class ```Zend_Config```
+or a glyphicon. When
+
+* 'Text' specified, it will render as is.
+
+* Zend_Config or array specified, it will generate a checkbox. **Note** that if the key "_active_" is passed inside the array or
+  inside the Zend_Config instance, it will render the prepended or appended box with green background.
