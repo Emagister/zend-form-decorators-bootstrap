@@ -1,0 +1,7 @@
+#page{width:50%;margin:0 auto;padding:1em 0;}
+h1,h2,h3{font-family:Basic, sans-serif !important;}
+h1{text-align:center;margin:0;}
+p{text-align:justify;}
+.highlight{border-radius:15px;-moz-border-radius:15px;background:black;font-family:Monaco,Bitstream Vera Sans Mono,monospace !important;font-size:.9em;}
+.highlight pre{padding:1em;}
+.highlight .bash{color:white;}

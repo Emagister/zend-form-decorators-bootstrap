@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ page.title }}</title>
+	<meta charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+	<link href='http://fonts.googleapis.com/css?family=Basic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/gh-buttons.css" />
+	<link rel="stylesheet" type="text/css" href="css/pygments.css" />
+	<style type="text/css">
+            #container{width:50%;margin:0 auto;padding:1em 0;}
+            #footer{margin-top:1.2em;border-top:1px solid #cccccc;}
+	    #footer p{margin:0;padding:.5em 0 0 0;text-align:right;font-size:x-small;}
+            h1,h2,h3{font-family:Basic, sans-serif !important;}
+            h1{text-align:center;margin:0;}
+            small{display:block;text-align:center;}
+            #fork-me{position:absolute;left:0;top:0;}
+            p{text-align:justify;}
+            .highlight{border-radius:15px;-moz-border-radius:15px;background:black;font-family:Monaco,Bitstream Vera Sans Mono,monospace !important;font-size:.9em;}
+            .highlight pre{padding:1em;}
+            .highlight .bash{color:white;}
+	    .share-buttons{overflow:hidden;}
+            .share-button{float:left;margin-left:1em;}
+            .share-button.no-margin{margin-left:0 !important;}
+            #fb-root{display:none;width:75px;}
+        </style>	
+</head>
+
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div id="fork-me">
+		<a href="https://github.com/Emagister/HttpGatewayCacheModule"><img alt="fork me on github" src="img/ForkMe_Blk.png" /></a>
+	</div>
+	<div id="container">
+		<div class="logo"><img alt="emagister.com" src="/img/emagister.jpg" /></div>
+		{{ content }}
+	</div>
+	<div id="footer">
+		<p>
+			Brought to you by the wonderful tech team of<br />
+			<a href="http://engineering.emagister.com"><img alt="emagister.com" src="img/emagister.gif"></a>
+		</p>
+	</div>
+</body>
+</html>
