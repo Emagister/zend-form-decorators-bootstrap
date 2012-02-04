@@ -2,7 +2,7 @@
 layout: layout
 title: Zend_Form decorators for Twitters's Bootstrap
 ---
-# Zend_Form decorators for Twitter's Bootstrap #
+# Zend_Form decorators for Twitter's Bootstrap <span class="label label-info">Supports Bootstrap 2.0.0! ;)</span> #
 
 This is a set of Zend_Form decorators and helpers that help to render the markup needed to display any Zend_Form as a
 [Twitter's Bootstrap](https://twitter.github.com/bootstrap) form.

@@ -1,7 +1,31 @@
-#page{width:50%;margin:0 auto;padding:1em 0;}
-h1,h2,h3{font-family:Basic, sans-serif !important;}
+#container{width:50%;margin:0 auto;padding:1em 0;}
+#footer{margin-top:1.2em;border-top:1px solid #cccccc;}
+#footer p{margin:0;padding:.5em 0 0 0;text-align:right;font-size:x-small;}
+h1,h2,h3,h4{font-family:Basic, sans-serif !important;}
 h1{text-align:center;margin:0;}
+small{display:block;text-align:center;}
+#fork-me{position:absolute;left:0;top:0;}
 p{text-align:justify;}
 .highlight{border-radius:15px;-moz-border-radius:15px;background:black;font-family:Monaco,Bitstream Vera Sans Mono,monospace !important;font-size:.9em;}
 .highlight pre{padding:1em;}
 .highlight .bash{color:white;}
+.share-buttons{overflow:hidden;}
+.share-button{float:left;margin-left:1em;}
+.share-button.no-margin{margin-left:0 !important;}
+#fb-root{display:none;width:75px;}
+.label {
+  padding: 1px 3px 2px;
+  font-size: 9.75px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  background-color: #999999;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-family: sans-serif;
+}
+
+.label-info {
+  background-color: #3a87ad;
+}
