@@ -36,8 +36,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Inline
             'label'         => 'Login',
             'type'          => 'submit',
             'buttonType'    => 'success',
-            'icon'          => 'ok',
-            'escape'        => false
+            'icon'          => 'ok'
         ));
     }
 }
@@ -276,7 +275,7 @@ or a glyphicon. When
 
 * 'Text' specified, it will render as is.
 
-* Zend_Config or array specified, it will generate a checkbox. **Note** that if the key "_active_" is passed inside the array or
+* Zend_Config or array specified, it will generate a checkbox. **Note** that if the key *active* is passed inside the array or
   inside the Zend_Config instance, it will render the prepended or appended box with green background.
 
 {% highlight php %}
@@ -334,6 +333,8 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
 In order to use Bootstrap 2.0.0, the needed assets need to be installed in your assets directory. Make sure to install also the
 glyphicons properly. Once all this stuff has been installed, create/modify a layout view script and add a reference to the
 Bootstrap CSS.
+
+* [Twitter's Bootstrap](http://twitter.github.com/bootstrap/index.html)
 
 {% highlight php %}
 <!-- /application/layouts/scripts/default.phtml -->
