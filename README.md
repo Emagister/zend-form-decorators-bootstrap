@@ -281,11 +281,13 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
 {
     public function init()
     {
+        // Some text
         $this->addElement('text', 'input1', array(
             'label'   => 'E-mail',
             'prepend' => '@'
         ));
 
+        // A checkbox
         $this->addElement('text', 'input2', array(
             'label' => '2nd E-mail',
             'prepend' => array(
@@ -293,6 +295,56 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
                 'active' => true
             )
         ));
+
+        // A glyphicon
+        $this->addElement('text', 'input2', array(
+            'label' => '2nd E-mail',
+            'prepend' => '<i class="icon-envelope"></i>'
+        ));
     }
 }
 ```
+
+#### Fieldsize decorator ####
+
+In order to specify a size of an input a special decorator is executed at the very begining of the decorator chain to set the
+appropiate class name. The size of an input can be set by the element's attribute **size**.
+
+```php
+<?php
+class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
+{
+    public function init()
+    {
+        // Some text
+        $this->addElement('text', 'input1', array(
+            'label'   => 'E-mail',
+            'size'    => 5
+        ));
+    }
+}
+```
+
+## Installation ##
+
+In order to use Bootstrap 2.0.0, the needed assets need to be installed in your assets directory. Make sure to install also the
+glyphicons properly. Once all this stuff has been installed, create/modify a layout view script and add a reference to the
+Bootstrap CSS.
+
+```php
+<!-- /application/layouts/scripts/default.phtml -->
+<?php $this->headLink()->appendStylesheet('/css/bootstrap.css'); ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <?php echo $this->headLink(); ?>
+    </head>
+
+    <body>
+        <!-- All your HTML stuff -->
+    </body>
+</html>
+```
+
+So that's it. Now you can start creating forms and rendering them the way shown before and you will get nice forms!
