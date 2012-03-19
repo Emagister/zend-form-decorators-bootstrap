@@ -18,26 +18,25 @@
  */
 abstract class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
 {
-    /**
-     * Class constructor override.
-     *
-     * @param null $options
-     */
-    public function __construct($options = null)
-    {
-        parent::__construct($options);
+	/**
+	 * Initialize form
+	 *
+	 * @return void
+	 */
+	public function init()
+	{
+		$this->setElementDecorators(array(
+		    array('FieldSize'),
+		    array('ViewHelper'),
+		    array('ElementErrors'),
+		    array('Description', array('tag' => 'p', 'class' => 'help-block')),
+		    array('Addon')
+		));
 
-        $this->setElementDecorators(array(
-            array('FieldSize'),
-            array('ViewHelper'),
-            array('ElementErrors'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('Addon')
-        ));
-
-        $this->setDecorators(array(
-            'FormElements',
-            'Form'
-        ));
-    }
+		$this->setDisableLoadDefaultDecorators(true);
+		$this->setDecorators(array(
+		    'FormElements',
+		    'Form'
+		));
+	}
 }
