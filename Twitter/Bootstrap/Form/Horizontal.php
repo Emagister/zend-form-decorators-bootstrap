@@ -27,9 +27,9 @@ abstract class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form_
         $this->setElementDecorators(array(
             array('FieldSize'),
             array('ViewHelper'),
+            array('Addon'),
             array('ElementErrors'),
             array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('Addon'),
             array('HtmlTag', array('tag' => 'div', 'class' => 'controls')),
             array('Label', array('class' => 'control-label')),
             array('Wrapper')
