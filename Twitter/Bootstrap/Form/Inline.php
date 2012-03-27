@@ -21,8 +21,6 @@ abstract class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
 {
     public function __construct($options = null)
     {
-        parent::__construct($options);
-
         $this->setDisposition(self::DISPOSITION_INLINE);
 
         $this->setElementDecorators(array(
@@ -36,5 +34,7 @@ abstract class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
             'FormElements',
             'Form'
         ));
+        
+        parent::__construct($options);
     }
 }

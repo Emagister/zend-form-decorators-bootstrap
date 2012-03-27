@@ -20,8 +20,6 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
 {
     public function __construct($options = null)
     {
-        parent::__construct($options);
-
         $this->setDisposition(self::DISPOSTION_SEARCH);
 
         $renderButton = true;
@@ -51,5 +49,7 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
                 'label' => $buttonLabel
             ));
         }
+        
+        parent::__construct($options);
     }
 }
