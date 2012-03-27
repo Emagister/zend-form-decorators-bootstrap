@@ -16,7 +16,7 @@
  * @subpackage Element
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Emagister_Twitter_Bootstrap_Form_Element_File extends Zend_Form_Element_File
+class Twitter_Bootstrap_Form_Element_File extends Zend_Form_Element_File
 {
     /**
      * Adds a file decorator if no one found
