@@ -318,8 +318,8 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
     {
         // Some text
         $this->addElement('text', 'input1', array(
-            'label'   => 'E-mail',
-            'size'    => 5
+            'label'     => 'E-mail',
+            'dimension' => 5
         ));
     }
 }
