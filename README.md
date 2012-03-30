@@ -14,7 +14,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Inline
     public function init()
     {
         $this->setIsArray(true);
-        $this->setElementsBelongsTo('bootstrap');
+        $this->_setElementsBelongsTo('bootstrap');
 
         $this->_addClassNames('well');
 
@@ -22,7 +22,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Inline
             'placeholder'   => 'E-mail',
             'prepend'       => '@',
             'class'         => 'focused'
-        );
+        ));
 
         $this->addElement('password', array(
             'placeholder' => 'Password'
