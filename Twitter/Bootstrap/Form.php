@@ -61,6 +61,11 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
         $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
 
+        $this->setDecorators(array(
+            'FormElements',
+            'Form'
+        ));
+
         parent::__construct($options);
     }
 

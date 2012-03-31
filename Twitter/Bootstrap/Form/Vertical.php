@@ -32,11 +32,6 @@ abstract class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
             array('Description', array('tag' => 'p', 'class' => 'help-block')),
             array('Addon')
         ));
-
-        $this->setDecorators(array(
-            'FormElements',
-            'Form'
-        ));
         
         parent::__construct($options);
     }
