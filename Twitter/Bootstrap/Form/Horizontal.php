@@ -16,7 +16,7 @@
  * @subpackage Form
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-abstract class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form_Vertical
+abstract class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
 {
     public function __construct($options = null)
     {
