@@ -35,9 +35,9 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
         $classes = array('btn');
 
         if (
-            isset($options['button-type'])
+            isset($options['buttonType'])
             && in_array(
-                $options['button-type'],
+                $options['buttonType'],
                 array(
                     self::BUTTON_DANGER,
                     self::BUTTON_INFO,
@@ -47,8 +47,8 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
                 )
             )
         ) {
-            $classes[] = 'btn-' . $options['button-type'];
-            unset($options['button-type']);
+            $classes[] = 'btn-' . $options['buttonType'];
+            unset($options['buttonType']);
         }
 
         if (isset($options['disabled'])) {
