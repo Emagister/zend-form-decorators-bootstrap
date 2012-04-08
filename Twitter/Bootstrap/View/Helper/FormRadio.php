@@ -77,7 +77,7 @@ class Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormEleme
             $label_attribs['class'] = '';
         }
 
-        $label_attribs['class'] = (strlen($label_attribs['class']) > 0 ? ' ' : '') . 'radio';
+        $label_attribs['class'] .= ' radio';
 
         $labelPlacement = 'append';
         foreach ($label_attribs as $key => $val) {
