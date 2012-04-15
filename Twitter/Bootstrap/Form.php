@@ -26,11 +26,6 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     const DISPOSTION_SEARCH      = 'search';
 
     /**
-     * @var string
-     */
-    private $_disposition;
-
-    /**
      * Override the base form constructor.
      *
      * @param null $options
