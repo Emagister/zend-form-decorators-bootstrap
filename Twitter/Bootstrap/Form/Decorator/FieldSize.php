@@ -29,7 +29,7 @@ class Twitter_Bootstrap_Form_Decorator_FieldSize extends Zend_Form_Decorator_Abs
         // Only apply this decorator to the Inputs, Selects or Textareas
         if (false !== ($size = $element->getAttrib('dimension'))) {
             $classes = explode(' ', $element->getAttrib('class'));
-            if ((int) $size > 1 && (int) $size < 12) {
+            if ((int) $size > 0) {
                 $classes[] = 'span' . $size;
             }
 
