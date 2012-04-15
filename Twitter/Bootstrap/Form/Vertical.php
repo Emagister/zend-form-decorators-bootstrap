@@ -16,7 +16,7 @@
  * @subpackage Form
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-abstract class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
+class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
 {
     /**
      * Class constructor override.
@@ -32,7 +32,7 @@ abstract class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
             array('Description', array('tag' => 'p', 'class' => 'help-block')),
             array('Addon')
         ));
-        
+
         parent::__construct($options);
     }
 }
