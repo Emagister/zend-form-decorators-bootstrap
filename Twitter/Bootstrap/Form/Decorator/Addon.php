@@ -63,7 +63,7 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
         $span = '<span class="' . $addOnClass . '">' . $addOn . '</span>';
 
         return '<div class="input-' . $placement . '">
-                    ' . (('prepend' == $placement) ? $span . PHP_EOL : '') . $content . (('append' == $placement) ? PHP_EOL . $span : '') . '
+                    ' . (('prepend' == $placement) ? $span : '') . $content . (('append' == $placement) ? $span : '') . '
                 </div>';
     }
 }
