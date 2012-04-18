@@ -18,6 +18,8 @@
  */
 final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
 {
+    protected $_disposition = Twitter_Bootstrap_Form::DISPOSTION_SEARCH;
+
     public function __construct($options = null)
     {
         $this->setDisposition(self::DISPOSTION_SEARCH);
