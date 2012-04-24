@@ -21,7 +21,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     /**
      * Class constants
      */
-    const DISPOSITION_VERTICAL 		= 'vertial';
+    const DISPOSITION_VERTICAL 		= 'vertical';
     const DISPOSITION_HORIZONTAL 	= 'horizontal';
     const DISPOSITION_INLINE     	= 'inline';
     const DISPOSTION_SEARCH      	= 'search';
