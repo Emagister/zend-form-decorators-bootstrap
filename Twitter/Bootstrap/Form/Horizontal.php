@@ -16,23 +16,21 @@
  * @subpackage Form
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
+abstract class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
 {
-    public function __construct($options = null)
-    {
-        $this->setDisposition(self::DISPOSITION_HORIZONTAL);
-
-        $this->setElementDecorators(array(
-            array('FieldSize'),
-            array('ViewHelper'),
-            array('Addon'),
-            array('ElementErrors'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('HtmlTag', array('tag' => 'div', 'class' => 'controls')),
-            array('Label', array('class' => 'control-label')),
-            array('Wrapper')
-        ));
-
-        parent::__construct($options);
-    }
+	
+	public static $defaultElementDecorators = array(
+		array('FieldSize'),
+		array('ViewHelper'),
+		array('Addon'),
+		array('ElementErrors'),
+		array('Description', array('tag' => 'p', 'class' => 'help-block')),
+		array('HtmlTag', array('tag' => 'div', 'class' => 'controls')),
+		array('Label', array('class' => 'control-label')),
+		array('Wrapper')
+	);
+	
+	protected $_disposition = Twitter_Bootstrap_Form::DISPOSITION_HORIZONTAL;
+	
 }
+

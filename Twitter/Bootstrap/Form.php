@@ -21,9 +21,12 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     /**
      * Class constants
      */
-    const DISPOSITION_HORIZONTAL = 'horizontal';
-    const DISPOSITION_INLINE     = 'inline';
-    const DISPOSTION_SEARCH      = 'search';
+    const DISPOSITION_VERTICAL 		= 'vertical';
+    const DISPOSITION_HORIZONTAL 	= 'horizontal';
+    const DISPOSITION_INLINE     	= 'inline';
+    const DISPOSTION_SEARCH      	= 'search';
+
+    protected $_disposition = self::DISPOSITION_VERTICAL;
 
     /**
      * Override the base form constructor.
@@ -60,6 +63,26 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             'FormElements',
             'Form'
         ));
+        
+	//set the decorators based on what's set in the child form's $_disposition variable
+	switch($this->_disposition) {
+		case self::DISPOSITION_HORIZONTAL:
+			$this->setDisposition(self::DISPOSITION_HORIZONTAL);
+			$options['bootstrapDecorators'] = Twitter_Bootstrap_Form_Horizontal::$defaultElementDecorators;
+			break;
+		case self::DISPOSITION_INLINE:
+			$this->setDisposition(self::DISPOSITION_INLINE);
+			$options['bootstrapDecorators'] = Twitter_Bootstrap_Form_Inline::$defaultElementDecorators;
+			break;
+		case self::DISPOSTION_SEARCH:
+			$this->setDisposition(self::DISPOSTION_SEARCH);
+			break;
+		case self::DISPOSITION_VERTICAL:
+		default:
+			$this->setDisposition(self::DISPOSITION_VERTICAL);
+			$options['bootstrapDecorators'] = Twitter_Bootstrap_Form_Vertical::$defaultElementDecorators;
+			break;			
+	}
 
         parent::__construct($options);
     }
@@ -81,6 +104,15 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         ) {
             $this->_addClassNames('form-' . $disposition);
         }
+    }
+
+    /**
+     * Sets form decorators
+     *
+     * @param array $decorators
+     */
+    public function setBootstrapDecorators($decorators) {
+    	$this->setElementDecorators($decorators);
     }
 
     /**

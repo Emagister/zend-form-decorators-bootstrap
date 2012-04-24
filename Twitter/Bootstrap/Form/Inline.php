@@ -17,19 +17,17 @@
  * @subpackage Form
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
+abstract class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
 {
-    public function __construct($options = null)
-    {
-        $this->setDisposition(self::DISPOSITION_INLINE);
-
-        $this->setElementDecorators(array(
-            array('FieldSize'),
-            array('ViewHelper'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('Addon')
-        ));
-
-        parent::__construct($options);
-    }
+	
+	public static $defaultElementDecorators = array(
+		array('FieldSize'),
+		array('ViewHelper'),
+		array('Description', array('tag' => 'p', 'class' => 'help-block')),
+		array('Addon')
+	);
+	
+	protected $_disposition = Twitter_Bootstrap_Form::DISPOSITION_INLINE;
+	
 }
+
