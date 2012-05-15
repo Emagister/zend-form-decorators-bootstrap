@@ -1,0 +1,13 @@
+{
+    "name":         "Emagister/zend-form-decorators-bootstrap",
+    "description":  "Zend_Form decorators for Twitter's Bootstrap UI",
+    "version":      "0.1.0"
+    "authors": [
+        {
+            "name":     "EmagisterTech",
+            "email":    "php@emagister.com",
+            "homepage": "http://engineering.emagister.com",
+            "role":     "Developer"
+        }
+    ]
+}
