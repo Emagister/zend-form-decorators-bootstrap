@@ -55,7 +55,7 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
      */
     private function _renderIcon()
     {
-        return '<i class="' . $this->_icon . '"></i>';
+        return isset($this->_icon) ? '<i class="' . $this->_icon . '"></i>' : '';
     }
 
     /**
