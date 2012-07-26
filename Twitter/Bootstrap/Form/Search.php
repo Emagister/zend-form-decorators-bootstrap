@@ -20,7 +20,7 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
 {
     public function __construct($options = null)
     {
-        $this->setDisposition(self::DISPOSTION_SEARCH);
+        $this->setDisposition(self::DISPOSITION_SEARCH);
 
         $renderButton = true;
         if (isset($options['renderInNavBar']) && true === $options['renderInNavBar']) {
