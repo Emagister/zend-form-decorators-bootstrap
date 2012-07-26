@@ -23,7 +23,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      */
     const DISPOSITION_HORIZONTAL = 'horizontal';
     const DISPOSITION_INLINE     = 'inline';
-    const DISPOSTION_SEARCH      = 'search';
+    const DISPOSITION_SEARCH     = 'search';
 
     /**
      * Override the base form constructor.
@@ -75,7 +75,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
                 array(
                     self::DISPOSITION_HORIZONTAL,
                     self::DISPOSITION_INLINE,
-                    self::DISPOSTION_SEARCH
+                    self::DISPOSITION_SEARCH
                 )
             )
         ) {
