@@ -1,28 +1,32 @@
 {
-    "name":         "emagister/zend-form-decorators-bootstrap",
-    "description":  "Zend_Form decorators for Twitter's Bootstrap UI",
-    "keywords": ["zend", "zend form", "zend form decorators", "twitter", "bootstrap", "twitter bootstrap"],
-    "type": "library",
-    "homepage": "https://emagister.github.com/zend-form-decorators-bootstrap",
-    "version":      "0.1.0",
-    "license": "MIT",
-    "authors": [
-        {
-            "name":     "EmagisterTech",
-            "email":    "php@emagister.com",
-            "homepage": "http://engineering.emagister.com",
-            "role":     "Developer"
-        }
-    ],
-
-    "requirements": {
-        "php": ">=5.2.4"
-
+   "name":"emagister/zend-form-decorators-bootstrap",
+   "description":"Zend_Form decorators for Twitter's Bootstrap UI",
+   "keywords":[
+      "zend",
+      "zend form",
+      "zend form decorators",
+      "twitter",
+      "bootstrap",
+      "twitter bootstrap"
+   ],
+   "type":"library",
+   "homepage":"https://emagister.github.com/zend-form-decorators-bootstrap",
+   "version":"0.1.0",
+   "license":"MIT",
+   "authors":[
+      {
+         "name":"EmagisterTech",
+         "email":"php@emagister.com",
+         "homepage":"http://engineering.emagister.com",
+         "role":"Developer"
+      }
+   ],
+   "requirements":{
+      "php":">=5.2.4"
+    },
+    "autoload":{
+    "psr-0":{
+        "Twitter_":"Twitter/"
     }
-
-    "autoload": {
-        "psr-0" : {
-            "Twitter_" : "Twitter/"
-        }
-    }
+}
 }
