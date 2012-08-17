@@ -25,6 +25,7 @@ class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
 
         $this->setElementDecorators(array(
             array('FieldSize'),
+            array('JQueryValidators'),
             array('ViewHelper'),
             array('Description', array('tag' => 'p', 'class' => 'help-block')),
             array('Addon')
