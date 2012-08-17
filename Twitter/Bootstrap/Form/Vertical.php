@@ -27,6 +27,7 @@ class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
     {
         $this->setElementDecorators(array(
             array('FieldSize'),
+            array('JQueryValidators'),
             array('ViewHelper'),
             array('ElementErrors'),
             array('Description', array('tag' => 'p', 'class' => 'help-block')),

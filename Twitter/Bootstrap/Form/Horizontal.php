@@ -24,6 +24,7 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
 
         $this->setElementDecorators(array(
             array('FieldSize'),
+            array('JQueryValidators'),
             array('ViewHelper'),
             array('Addon'),
             array('ElementErrors'),
