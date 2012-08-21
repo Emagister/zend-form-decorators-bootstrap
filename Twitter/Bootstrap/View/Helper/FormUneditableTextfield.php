@@ -33,8 +33,9 @@ class Twitter_Bootstrap_View_Helper_FormUneditableTextfield extends Zend_View_He
      *
      * @return string The element XHTML.
      */
-    public function formText($name, $value = null, $attribs = null)
+    public function formUneditableTextfield($name, $value = null, $attribs = null)
     {
-        return '<span class="uneditable-input">' . $this->view->escape($value) . '</span>';
+        $attribs['class'] .= 'uneditable-input';
+        return '<span '. $this->_htmlAttribs($attribs) .'>' . $this->view->escape($value) . '</span>';
     }
 }
