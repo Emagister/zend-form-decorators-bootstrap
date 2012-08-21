@@ -35,35 +35,63 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
             return $content;
         }
 
-        $placement = 'prepend';
-        $addOn = $prepend;
-        if (null !== $append) {
-            $placement = 'append';
-            $addOn = $append;
-        }
+        $placement = '';
 
-        if (is_array($addOn)) {
-            $addOn = new Zend_Config($addOn, true);
-        }
-
-        $addOnClass = 'add-on';
-        if ($addOn instanceof Zend_Config) {
-            if (isset($addOn->active) && true === $addOn->active) {
-                $addOnClass .= ' active';
-                unset($addOn->active);
+        // Prepare the prepend
+        if (null !== $prepend) {
+            $placement .= 'input-prepend ';
+            
+            // Convert into a Zend_Config object if we recieved an array
+            if (is_array($prepend)) {
+                $prepend = new Zend_Config($prepend, true);
             }
-
-            $prependedElement = new Zend_Form_Element_Checkbox($addOn);
-            $prependedElement->setDecorators(array(array('ViewHelper')));
-            $addOn = $prependedElement->render($this->getElement()->getView());
+            
+            $prependAddOnClass = 'add-on';
+            if ($prepend instanceof Zend_Config) {
+                if (isset($prepend->active) && true === $prepend->active) {
+                    $prependAddOnClass .= ' active';
+                    unset($prepend->active);
+                }
+            
+                $prependedElement = new Zend_Form_Element_Checkbox($prepend);
+                $prependedElement->setDecorators(array(array('ViewHelper')));
+                $prepend = $prependedElement->render($this->getElement()->getView());
+            }
+            
+            $prepend = '<span class="' . $prependAddOnClass . '">' . $prepend . '</span>';
+        }
+        
+        // Prepare the append
+        if (null !== $append) {
+            $placement .= 'input-append ';
+        
+            // Convert into a Zend_Config object if we recieved an array
+            if (is_array($append)) {
+                $append = new Zend_Config($append, true);
+            }
+        
+            $appendAddOnClass = 'add-on';
+            if ($append instanceof Zend_Config) {
+                if (isset($append->active) && true === $append->active) {
+                    $appendAddOnClass .= ' active';
+                    unset($append->active);
+                }
+        
+                $appendedElement = new Zend_Form_Element_Checkbox($append);
+                $appendedElement->setDecorators(array(array('ViewHelper')));
+                $append = $appendedElement->render($this->getElement()->getView());
+            }
+            
+            $append = '<span class="' . $appendAddOnClass . '">' . $append . '</span>';
         }
 
+        // Unset the prepend and append data
         $this->getElement()->setAttrib('prepend', null);
         $this->getElement()->setAttrib('append', null);
-        $span = '<span class="' . $addOnClass . '">' . $addOn . '</span>';
 
-        return '<div class="input-' . $placement . '">
-                    ' . (('prepend' == $placement) ? $span : '') . trim($content) . (('append' == $placement) ? $span : '') . '
+        // Return the rendered input field
+        return '<div class="' . $placement . '">
+                    ' . ((null !== $prepend) ? $prepend : '') . trim($content) . ((null !== $append) ? $append : '') . '
                 </div>';
     }
 }
