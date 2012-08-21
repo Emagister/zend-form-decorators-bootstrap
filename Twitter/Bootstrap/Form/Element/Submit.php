@@ -32,7 +32,9 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
      */
     public function __construct($spec, $options = null)
     {
-        $classes = array('btn');
+        if (!isset($options['class'])) $options['class'] = '';
+        $classes = explode(' ',$options['class']);
+        $classes[] = 'btn';
 
         if (
             isset($options['buttonType'])
@@ -54,8 +56,10 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
         if (isset($options['disabled'])) {
             $classes[] = 'disabled';
         }
+        
+        $classes = array_unique($classes);
 
-        $this->setAttrib('class', implode(' ', $classes));
+        $options['class'] = implode(' ', $classes);
 
         parent::__construct($spec, $options);
     }
