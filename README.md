@@ -216,7 +216,8 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
             'label'      => 'Send e-mail!',
             'buttonType' => Twitter_Bootstrap_Form_Element_Submit::BUTTON_SUCCESS,
             'icon'       => 'ok',
-            'whiteIcon'  => true
+            'whiteIcon'  => true,
+            'iconPosition' => Twitter_Bootstrap_Form_Element_Button::ICON_POSITION_RIGHT
         ));
     }
 }
