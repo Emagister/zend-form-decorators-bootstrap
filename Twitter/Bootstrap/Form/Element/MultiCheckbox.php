@@ -10,14 +10,14 @@
  */
 
 /**
- * Twitter's Bootstrap radio buttons
+ * Twitter's Bootstrap multi checkboxes
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
  * @subpackage Element
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Twitter_Bootstrap_Form_Element_Radio extends Zend_Form_Element_Radio
+class Twitter_Bootstrap_Form_Element_MultiCheckbox extends Zend_Form_Element_MultiCheckbox
 {
     /**
      * The default separator (Changed to be nothing for bootstrap)

@@ -28,7 +28,10 @@ class Twitter_Bootstrap_Form_Element_File extends Zend_Form_Element_File
         }
 
         if (!$this->_existsFileDecorator()) {
-            $this->addDecorator('File');
+            // Add the file decorator to the beginning
+            $decorators = array_merge(array('File'), $this->getDecorators());
+            $this->setDecorators($decorators);
+            $this->removeDecorator('ViewHelper');
         }
         return $this;
     }
