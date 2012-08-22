@@ -20,8 +20,8 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
 {
     public function __construct($options = null)
     {
-        parent::__construct($options);
-
+        $this->_initializePrefixes();
+        
         $this->setDisposition(self::DISPOSITION_HORIZONTAL);
 
         $this->setElementDecorators(array(
@@ -34,5 +34,7 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
             array('Label', array('class' => 'control-label')),
             array('Wrapper')
         ));
+        
+        parent::__construct($options);
     }
 }

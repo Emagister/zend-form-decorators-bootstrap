@@ -24,6 +24,8 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     const DISPOSITION_HORIZONTAL = 'horizontal';
     const DISPOSITION_INLINE     = 'inline';
     const DISPOSITION_SEARCH     = 'search';
+    
+    protected $_prefixesInitialized = false;
 
     /**
      * Override the base form constructor.
@@ -32,36 +34,45 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      */
     public function __construct($options = null)
     {
-        $this->getView()->addHelperPath(
-            'Twitter/Bootstrap/View/Helper',
-            'Twitter_Bootstrap_View_Helper'
-        );
-
-        $this->addPrefixPath(
-            'Twitter_Bootstrap_Form_Element',
-            'Twitter/Bootstrap/Form/Element',
-            'element'
-        );
-
-        $this->addElementPrefixPath(
-            'Twitter_Bootstrap_Form_Decorator',
-            'Twitter/Bootstrap/Form/Decorator',
-            'decorator'
-        );
-
-        $this->addDisplayGroupPrefixPath(
-            'Twitter_Bootstrap_Form_Decorator',
-            'Twitter/Bootstrap/Form/Decorator'
-        );
-
-        $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
-
+        $this->_initializePrefixes();
         $this->setDecorators(array(
             'FormElements',
             'Form'
         ));
 
         parent::__construct($options);
+    }
+    
+    protected function _initializePrefixes()
+    {
+        if (!$this->_prefixesInitialized)
+        {
+            $this->getView()->addHelperPath(
+                    'Twitter/Bootstrap/View/Helper',
+                    'Twitter_Bootstrap_View_Helper'
+            );
+            
+            $this->addPrefixPath(
+                    'Twitter_Bootstrap_Form_Element',
+                    'Twitter/Bootstrap/Form/Element',
+                    'element'
+            );
+            
+            $this->addElementPrefixPath(
+                    'Twitter_Bootstrap_Form_Decorator',
+                    'Twitter/Bootstrap/Form/Decorator',
+                    'decorator'
+            );
+            
+            $this->addDisplayGroupPrefixPath(
+                    'Twitter_Bootstrap_Form_Decorator',
+                    'Twitter/Bootstrap/Form/Decorator'
+            );
+            
+            $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
+            
+            $this->_prefixesInitialized = true;
+        }
     }
 
     /**
