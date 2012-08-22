@@ -23,6 +23,7 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
     const BUTTON_SUCCESS = 'success';
     const BUTTON_WARNING = 'warning';
     const BUTTON_DANGER = 'danger';
+    const BUTTON_INVERSE = 'inverse';
 
     /**
      * Class constructor
@@ -45,7 +46,8 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
                     self::BUTTON_INFO,
                     self::BUTTON_PRIMARY,
                     self::BUTTON_SUCCESS,
-                    self::BUTTON_WARNING
+                    self::BUTTON_WARNING,
+                    self::BUTTON_INVERSE
                 )
             )
         ) {
