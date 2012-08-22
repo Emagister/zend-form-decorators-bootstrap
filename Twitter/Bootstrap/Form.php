@@ -76,6 +76,29 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     }
 
     /**
+     * Adds default decorators if none are specified in the options and then calls Zend_Form::createElement()
+     * (non-PHPdoc)
+     * @see Zend_Form::createElement()
+     */
+    public function createElement($type, $name, $options = null)
+    {
+        // If we haven't specified our own decorators, add the default ones in.
+        if (is_array($this->_elementDecorators)) {
+            if (null === $options) {
+                $options = array('decorators' => $this->_elementDecorators);
+            } elseif ($options instanceof Zend_Config) {
+                $options = $options->toArray();
+            }
+
+            if ( is_array($options) && !array_key_exists('decorators', $options) ) {
+                $options['decorators'] = $this->_elementDecorators;
+            }
+        }
+        
+        return parent::createElement($type, $name, $options);
+    }
+    
+    /**
      * @param string $disposition
      */
     public function setDisposition($disposition)
