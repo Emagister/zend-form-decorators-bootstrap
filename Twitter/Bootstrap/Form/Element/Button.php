@@ -1,4 +1,5 @@
 <?php
+
 /**
  * A form button submit definition
  *
@@ -18,42 +19,60 @@
  */
 class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Element_Submit
 {
+    // Icon Positions
+    const ICON_POSITION_LEFT = 'left';
+
+    const ICON_POSITION_RIGHT = 'right';
+
     /**
      * Use formButton view helper by default
+     *
      * @var string
      */
     public $helper = 'formButton';
 
     /**
      * The icon class, that will be added if needed
+     *
      * @var string
      */
     private $_icon;
 
-    public function __construct($spec, $options = null)
+    private $_iconPosition = self::ICON_POSITION_LEFT;
+
+    public function __construct ($spec, $options = null)
     {
         if (isset($options['icon'])) {
             // Disable automatic label escaping
             $options['escape'] = false;
-
+            
             $this->_icon = 'icon-' . $options['icon'];
-
+            
             if (isset($options['whiteIcon']) && true === $options['whiteIcon']) {
                 $this->_icon .= ' icon-white';
                 unset($options['whiteIcon']);
             }
-
+            
+            if (isset($options['iconPosition'])) {
+                if (strcmp($options['iconPosition'], self::ICON_POSITION_RIGHT) ===
+                         0) {
+                    $this->_iconPosition = self::ICON_POSITION_RIGHT;
+                }
+                unset($options['iconPosition']);
+            }
+            
             unset($options['icon']);
         }
-
+        
         parent::__construct($spec, $options);
     }
 
     /**
      * Renders the icon tag
+     *
      * @return string
      */
-    private function _renderIcon()
+    private function _renderIcon ()
     {
         return isset($this->_icon) ? '<i class="' . $this->_icon . '"></i>' : '';
     }
@@ -63,8 +82,12 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
      *
      * @return string
      */
-    public function getLabel()
+    public function getLabel ()
     {
-        return $this->_renderIcon() . PHP_EOL .parent::getLabel();
+        // Render the icon on either side
+        if (strcasecmp($this->_iconPosition, self::ICON_POSITION_LEFT) === 0)
+            return $this->_renderIcon() . PHP_EOL . parent::getLabel();
+        else
+            return parent::getLabel() . PHP_EOL . $this->_renderIcon();
     }
 }
