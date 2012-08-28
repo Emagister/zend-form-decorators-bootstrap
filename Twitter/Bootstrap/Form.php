@@ -47,10 +47,12 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     {
         if (!$this->_prefixesInitialized)
         {
-            $this->getView()->addHelperPath(
-                    'Twitter/Bootstrap/View/Helper',
-                    'Twitter_Bootstrap_View_Helper'
-            );
+            if (!is_null($this->getView)) {
+                $this->getView()->addHelperPath(
+                        'Twitter/Bootstrap/View/Helper',
+                        'Twitter_Bootstrap_View_Helper'
+                );
+            }
             
             $this->addPrefixPath(
                     'Twitter_Bootstrap_Form_Element',
