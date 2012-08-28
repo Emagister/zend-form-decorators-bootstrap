@@ -29,5 +29,5 @@
             "Twitter_":"Twitter/"
         }
     },
-	"include-path": ["/"]
+	"include-path": [""]
 }
