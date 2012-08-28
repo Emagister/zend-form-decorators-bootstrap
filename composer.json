@@ -25,8 +25,9 @@
       "php":">=5.2.4"
     },
     "autoload":{
-    "psr-0":{
-        "Twitter_":"Twitter/"
-    }
-}
+        "psr-0":{
+            "Twitter_":"Twitter/"
+        }
+    },
+	"include-path": [""]
 }
