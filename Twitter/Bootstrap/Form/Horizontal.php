@@ -41,6 +41,7 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
             if ($element->loadDefaultDecoratorsIsDisabled()) {
                 continue;
             }
+
             $element->addDecorators(array(
                 array('FieldSize'),
                 array('ViewHelper'),
@@ -51,9 +52,30 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
                 array('Label', array('class' => 'control-label')),
                 array('Wrapper')
             ));
+
+            $this->_sortFieldSizeFirst($element);
         }
         
         return parent::loadDefaultDecorators();
     }
 
+    /**
+     * We need to sort the fieldsize decorator first or it will be ignored if the viewhelper has already been called
+     *
+     * @param $element
+     */
+    protected function _sortFieldSizeFirst($element)
+    {
+        $decorators = $element->getDecorators();
+        $i= 0;
+        foreach ($decorators as $decorator) {
+            if ($decorator instanceof Twitter_Bootstrap_Form_Decorator_FieldSize) {
+                $fieldsize = array_slice($decorators, $i);
+                array_unshift($decorators, $fieldsize);
+                break;
+            }
+            $i++;
+        }
+        $element->setDecorators(array_values($decorators));
+    }
 }
