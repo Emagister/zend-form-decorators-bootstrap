@@ -24,17 +24,36 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
         
         $this->setDisposition(self::DISPOSITION_HORIZONTAL);
 
-        $this->setElementDecorators(array(
-            array('FieldSize'),
-            array('ViewHelper'),
-            array('Addon'),
-            array('ElementErrors'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('HtmlTag', array('tag' => 'div', 'class' => 'controls')),
-            array('Label', array('class' => 'control-label')),
-            array('Wrapper')
-        ));
-        
         parent::__construct($options);
+
     }
+
+    /**
+     * Load the default decorators
+     *
+     * @return Zend_Form
+     */
+    public function loadDefaultDecorators()
+    {
+        $elementObjs = $this->getElements();
+        /** @var $element Zend_Form_Element */
+        foreach ($elementObjs as $element) {
+            if ($element->loadDefaultDecoratorsIsDisabled()) {
+                continue;
+            }
+            $element->addDecorators(array(
+                array('FieldSize'),
+                array('ViewHelper'),
+                array('Addon'),
+                array('ElementErrors'),
+                array('Description', array('tag' => 'p', 'class' => 'help-block')),
+                array('HtmlTag', array('tag' => 'div', 'class' => 'controls')),
+                array('Label', array('class' => 'control-label')),
+                array('Wrapper')
+            ));
+        }
+        
+        return parent::loadDefaultDecorators();
+    }
+
 }
