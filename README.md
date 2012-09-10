@@ -240,7 +240,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
             'type'          => 'submit'
         ));
 
-        $this->addElement('button', 'submit', array(
+        $this->addElement('button', 'reset', array(
             'label'         => 'Reset',
             'type'          => 'reset'
         ));
