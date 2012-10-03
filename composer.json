@@ -21,7 +21,7 @@
          "role":"Developer"
       }
    ],
-   "requirements":{
+   "require":{
       "php":">=5.2.4"
     },
     "autoload":{
