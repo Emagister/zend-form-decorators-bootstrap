@@ -28,8 +28,22 @@ class Twitter_Bootstrap_Form_Decorator_ElementErrors extends Zend_Form_Decorator
             return $content;
         }
 
-        $errors = implode('. ', $this->getElement()->getMessages());
+	    $options = $this->getOptions();
+	    $escape = true;
+	    if (isset($options['escape'])) {
+		    $escape = (bool) $options['escape'];
+	    }
 
-        return $content . '<span class="help-inline">' . $errors . '</span>';
+	    $errors = $this->getElement()->getMessages();
+	    if ($escape) {
+		    $view = $this->getElement()->getView();
+		    foreach ($errors as $key => $message) {
+				$errors[$key] = $view->escape($message);
+		    }
+	    }
+
+        $errormessage = implode('. ', $errors);
+
+        return $content . '<span class="help-inline">' . $errormessage . '</span>';
     }
 }
