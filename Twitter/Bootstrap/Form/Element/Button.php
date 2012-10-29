@@ -85,9 +85,10 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
     public function getLabel ()
     {
         // Render the icon on either side
-        if (strcasecmp($this->_iconPosition, self::ICON_POSITION_LEFT) === 0)
+        if (strcasecmp($this->_iconPosition, self::ICON_POSITION_LEFT) === 0) {
             return $this->_renderIcon() . PHP_EOL . parent::getLabel();
-        else
-            return parent::getLabel() . PHP_EOL . $this->_renderIcon();
+        }
+        
+        return parent::getLabel() . PHP_EOL . $this->_renderIcon();
     }
 }
