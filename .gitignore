@@ -1,2 +1,8 @@
 vendor
 composer.phar
+
+# OS or Editor folders
+.DS_Store
+.settings
+.buildpath
+.project
