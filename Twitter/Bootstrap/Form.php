@@ -97,6 +97,11 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
                 $options['decorators'] = $this->_elementDecorators;
             }
         }
+
+	    // no decorators for hidden elements
+	    if ($type == 'hidden') {
+		    $options["decorators"] = array('ViewHelper');
+	    }
         
         return parent::createElement($type, $name, $options);
     }
