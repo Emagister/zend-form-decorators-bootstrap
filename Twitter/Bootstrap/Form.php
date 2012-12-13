@@ -133,7 +133,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             $classes[] = $className;
         }
 
-        $this->setAttrib('class', implode(' ', $classes));
+        $this->setAttrib('class', implode(' ', array_unique($classes)));
     }
 
     /**
@@ -143,13 +143,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      */
     protected function _removeClassNames($classNames)
     {
-        $classes = $this->getAttrib('class');
-
-        foreach ((array) $classNames as $className) {
-            if (false !== strpos($classes, $className)) {
-                str_replace($className . ' ', '', $classes);
-            }
-        }
+        $this->setAttrib('class', implode(' ', array_diff($this->_getClassNames(), (array) $classNames)));
     }
 
     /**
