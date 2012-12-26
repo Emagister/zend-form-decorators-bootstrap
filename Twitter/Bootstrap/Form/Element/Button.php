@@ -42,7 +42,7 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
 
     public function __construct ($spec, $options = null)
     {
-        if (isset($options['icon'])) {
+        if (isset($options['icon']) && !empty($options['icon'])) {
             // Disable automatic label escaping
             $options['escape'] = false;
             
@@ -54,8 +54,7 @@ class Twitter_Bootstrap_Form_Element_Button extends Twitter_Bootstrap_Form_Eleme
             }
             
             if (isset($options['iconPosition'])) {
-                if (strcmp($options['iconPosition'], self::ICON_POSITION_RIGHT) ===
-                         0) {
+                if (strcmp($options['iconPosition'], self::ICON_POSITION_RIGHT) === 0) {
                     $this->_iconPosition = self::ICON_POSITION_RIGHT;
                 }
                 unset($options['iconPosition']);
