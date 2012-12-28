@@ -32,7 +32,7 @@ class Twitter_Bootstrap_Form_Decorator_Captcha extends Zend_Form_Decorator_Captc
             return $content;
         }
 
-        $view    = $element->getView();
+        $view = $element->getView();
         if (null === $view) {
             return $content;
         }
@@ -49,6 +49,7 @@ class Twitter_Bootstrap_Form_Decorator_Captcha extends Zend_Form_Decorator_Captc
             case 'APPEND':
             default:
                 $content = $content . $separator . $markup;
+            	break;
         }
         return $content;
     }

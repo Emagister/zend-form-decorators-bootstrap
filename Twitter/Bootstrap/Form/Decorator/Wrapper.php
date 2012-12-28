@@ -29,8 +29,6 @@ class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstr
     {
         $hasErrors = $this->getElement()->hasErrors();
 
-        return '<div class="control-group' . (($hasErrors) ? ' error' : '') . '">
-                    ' . $content . '
-                </div>';
+        return '<div class="control-group' . (($hasErrors) ? ' error' : '') . '">' . $content . '</div>';
     }
 }
