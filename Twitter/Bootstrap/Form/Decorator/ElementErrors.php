@@ -44,6 +44,6 @@ class Twitter_Bootstrap_Form_Decorator_ElementErrors extends Zend_Form_Decorator
 
         $errormessage = implode('. ', $errors);
 
-        return $content . '<div><span class="help-inline">' . $errormessage . '</span></div>';
+        return $content . '<span class="help-inline">' . $errormessage . '</span>';
     }
 }
