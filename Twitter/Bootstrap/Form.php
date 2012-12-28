@@ -99,7 +99,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         }
 
 	    // no decorators for hidden elements
-	    if ($type == 'hidden') {
+	    if (in_array($type, array('hidden', 'hash'))) {
 		    $options["decorators"] = array('ViewHelper');
 	    }
         
