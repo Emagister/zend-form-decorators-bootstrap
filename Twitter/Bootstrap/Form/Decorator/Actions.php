@@ -27,7 +27,7 @@ class Twitter_Bootstrap_Form_Decorator_Actions extends Zend_Form_Decorator_Abstr
     {
         $output = '';
         foreach ($this->getElement() as $element) {
-            if(!is_null($element) && $element instanceof Zend_Form_Element) {
+            if($element !== null && $element instanceof Zend_Form_Element) {
             	$element->setDecorators(array(array('ViewHelper')));
             	$output .= $element->render();
             }
