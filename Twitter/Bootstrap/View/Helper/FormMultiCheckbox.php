@@ -47,7 +47,7 @@ class Twitter_Bootstrap_View_Helper_FormMultiCheckbox extends Zend_View_Helper_F
             $label_attribs['class'] = '';
         }
 
-        $label_attribs['class'] = 'checkbox ' . $label_attribs['class'];
+        $label_attribs['class'] = trim('checkbox ' . $label_attribs['class']);
 
         $labelPlacement = 'append';
         foreach ($label_attribs as $key => $val) {
