@@ -27,11 +27,10 @@ class Twitter_Bootstrap_Form_Decorator_Actions extends Zend_Form_Decorator_Abstr
     {
         $output = '';
         foreach ($this->getElement() as $element) {
-            $element->setDecorators(array(
-                array('ViewHelper')
-            ));
-
-            $output .= $element->render();
+            if($element !== null && $element instanceof Zend_Form_Element) {
+            	$element->setDecorators(array(array('ViewHelper')));
+            	$output .= $element->render();
+            }
         }
 
         return $output;
@@ -45,8 +44,6 @@ class Twitter_Bootstrap_Form_Decorator_Actions extends Zend_Form_Decorator_Abstr
      */
     public function render($content)
     {
-        return '<div class="form-actions">
-                    ' . $this->buildButtons() . '
-                </div>';
+        return '<div class="form-actions">' . $this->buildButtons() . '</div>';
     }
 }
