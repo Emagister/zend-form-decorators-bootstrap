@@ -166,4 +166,35 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
         return explode(' ', $this->getAttrib('class'));
     }
+
+    /**
+     * Render form
+     *
+     * @param  Zend_View_Interface $view
+     * @return string
+     */
+    public function render( Zend_View_Interface $view = null ) {
+    	/**
+    	 * Getting elements.
+    	 */
+    	$elements = $this->getElements();
+
+    	foreach ( $elements as $eachElement ) {
+    		/**
+    		 * Removing label from buttons before render.
+    		 */
+    		if ( $eachElement instanceof Zend_Form_Element_Submit ) {
+    			$eachElement->removeDecorator( 'Label' );
+    		}
+
+    		if( $eachElement instanceof Zend_Form_Element_Hidden ) {
+    			$eachElement->clearDecorators()->addDecorator( 'ViewHelper' );
+    		}
+    	}
+
+    	/**
+    	 * Rendering.
+    	 */
+    	return parent::render( $view );
+    }
 }
