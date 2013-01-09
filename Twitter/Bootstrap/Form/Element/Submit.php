@@ -27,7 +27,7 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
     const BUTTON_LINK = 'link';
 
     protected $buttons = array(
-    	self::BUTTON_DANGER,
+        self::BUTTON_DANGER,
         self::BUTTON_INFO,
         self::BUTTON_PRIMARY,
         self::BUTTON_SUCCESS,
@@ -45,9 +45,9 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
     public function __construct($spec, $options = null)
     {
 
-    	if (!isset($options['class'])) {
-    		$options['class'] = '';
-    	}
+        if (!isset($options['class'])) {
+            $options['class'] = '';
+        }
 
         $classes = explode(' ', $options['class']);
         $classes[] = 'btn';

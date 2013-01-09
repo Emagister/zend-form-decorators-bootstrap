@@ -45,10 +45,8 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
     protected function _initializePrefixes()
     {
-        if (!$this->_prefixesInitialized)
-        {
-            if (null !== $this->getView())
-            {
+        if (!$this->_prefixesInitialized) {
+            if (null !== $this->getView()) {
                 $this->getView()->addHelperPath(
                         'Twitter/Bootstrap/View/Helper',
                         'Twitter_Bootstrap_View_Helper'
@@ -98,10 +96,10 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             }
         }
 
-	    // no decorators for hidden elements
-	    if (in_array($type, array('hidden', 'hash'))) {
-		    $options["decorators"] = array('ViewHelper');
-	    }
+        // no decorators for hidden elements
+        if (in_array($type, array('hidden', 'hash'))) {
+            $options["decorators"] = array('ViewHelper');
+        }
 
         return parent::createElement($type, $name, $options);
     }
@@ -155,7 +153,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      * Extract the class names from a Zend_Form_Element if given or from the
      * base form
      *
-     * @param Zend_Form_Element $element
+     * @param  Zend_Form_Element $element
      * @return array
      */
     protected function _getClassNames(Zend_Form_Element $element = null)
@@ -173,29 +171,30 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      * @param  Zend_View_Interface $view
      * @return string
      */
-    public function render(Zend_View_Interface $view = null) {
+    public function render(Zend_View_Interface $view = null)
+    {
+        /**
+         * Getting elements.
+         */
+        $elements = $this->getElements();
 
-    	/**
-    	 * Getting elements.
-    	 */
-    	$elements = $this->getElements();
+        foreach ($elements as $eachElement) {
+            /**
+             * Removing label from buttons before render.
+             */
+            if ($eachElement instanceof Zend_Form_Element_Submit) {
+                $eachElement->removeDecorator('Label');
+            }
 
-    	foreach ($elements as $eachElement) {
-    		/**
-    		 * Removing label from buttons before render.
-    		 */
-    		if ($eachElement instanceof Zend_Form_Element_Submit) {
-    			$eachElement->removeDecorator('Label');
-    		}
+            if ($eachElement instanceof Zend_Form_Element_Hidden) {
+                $eachElement->clearDecorators()->addDecorator('ViewHelper');
+            }
+        }
 
-    		if( $eachElement instanceof Zend_Form_Element_Hidden ) {
-    			$eachElement->clearDecorators()->addDecorator('ViewHelper');
-    		}
-    	}
+        /**
+         * Rendering.
+         */
 
-    	/**
-    	 * Rendering.
-    	 */
-    	return parent::render($view);
+        return parent::render($view);
     }
 }

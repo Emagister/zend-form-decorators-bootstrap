@@ -19,7 +19,7 @@
 class Twitter_Bootstrap_Form_Decorator_FieldSize extends Zend_Form_Decorator_Abstract
 {
     /**
-     * @param string $content
+     * @param  string $content
      * @return mixed
      */
     public function render($content)

@@ -49,8 +49,9 @@ class Twitter_Bootstrap_Form_Decorator_Captcha extends Zend_Form_Decorator_Captc
             case 'APPEND':
             default:
                 $content = $content . $separator . $markup;
-            	break;
+                break;
         }
+
         return $content;
     }
 

@@ -26,7 +26,7 @@ class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
     public function __construct($options = null)
     {
         $this->_initializePrefixes();
-        
+
         $this->setElementDecorators(array(
             array('FieldSize'),
             array('ViewHelper'),
@@ -35,7 +35,7 @@ class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
             array('Addon'),
             array('Label', array('class' => 'control-label')),
         ));
-        
+
         parent::__construct($options);
     }
 }

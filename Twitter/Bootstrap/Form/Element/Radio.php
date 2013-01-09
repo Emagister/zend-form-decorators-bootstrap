@@ -21,7 +21,7 @@ class Twitter_Bootstrap_Form_Element_Radio extends Zend_Form_Element_Radio
 {
     /**
      * The default separator (Changed to be nothing for bootstrap)
-     * 
+     *
      * @var string
      */
     protected $_separator = '';

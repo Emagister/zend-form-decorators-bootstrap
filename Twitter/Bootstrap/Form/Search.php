@@ -21,7 +21,7 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
     public function __construct($options = null)
     {
         $this->_initializePrefixes();
-        
+
         $this->setDisposition(self::DISPOSITION_SEARCH);
 
         $renderButton = true;
@@ -53,7 +53,7 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
                 'label' => $buttonLabel
             ));
         }
-        
+
         parent::__construct($options);
     }
 }
