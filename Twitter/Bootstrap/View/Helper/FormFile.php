@@ -46,6 +46,8 @@ class Twitter_Bootstrap_View_Helper_FormFile extends Zend_View_Helper_FormFile
             $disabled = ' disabled="disabled"';
         }
 
+        $attribs['class'] = trim($attribs['class']);
+
         // XHTML or HTML end tag?
         $endTag = ' />';
         if (($this->view instanceof Zend_View_Abstract) && !$this->view->doctype()->isXhtml()) {

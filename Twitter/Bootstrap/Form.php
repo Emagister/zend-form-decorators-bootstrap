@@ -24,7 +24,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     const DISPOSITION_HORIZONTAL = 'horizontal';
     const DISPOSITION_INLINE     = 'inline';
     const DISPOSITION_SEARCH     = 'search';
-    
+
     protected $_prefixesInitialized = false;
 
     /**
@@ -42,7 +42,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
         parent::__construct($options);
     }
-    
+
     protected function _initializePrefixes()
     {
         if (!$this->_prefixesInitialized)
@@ -60,20 +60,20 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
                     'Twitter/Bootstrap/Form/Element',
                     'element'
             );
-            
+
             $this->addElementPrefixPath(
                     'Twitter_Bootstrap_Form_Decorator',
                     'Twitter/Bootstrap/Form/Decorator',
                     'decorator'
             );
-            
+
             $this->addDisplayGroupPrefixPath(
                     'Twitter_Bootstrap_Form_Decorator',
                     'Twitter/Bootstrap/Form/Decorator'
             );
-            
+
             $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
-            
+
             $this->_prefixesInitialized = true;
         }
     }
@@ -102,10 +102,10 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 	    if (in_array($type, array('hidden', 'hash'))) {
 		    $options["decorators"] = array('ViewHelper');
 	    }
-        
+
         return parent::createElement($type, $name, $options);
     }
-    
+
     /**
      * @param string $disposition
      */
@@ -138,7 +138,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             $classes[] = $className;
         }
 
-        $this->setAttrib('class', implode(' ', array_unique($classes)));
+        $this->setAttrib('class', trim(implode(' ', array_unique($classes))));
     }
 
     /**
@@ -148,7 +148,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      */
     protected function _removeClassNames($classNames)
     {
-        $this->setAttrib('class', implode(' ', array_diff($this->_getClassNames(), (array) $classNames)));
+        $this->setAttrib('class', trim(implode(' ', array_diff($this->_getClassNames(), (array) $classNames))));
     }
 
     /**
