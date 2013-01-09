@@ -46,13 +46,13 @@ class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
     {
 
     	if (!isset($options['class'])) {
-        	$options['class'] = '';
-        }
+    		$options['class'] = '';
+    	}
 
         $classes = explode(' ', $options['class']);
         $classes[] = 'btn';
 
-        if ( isset($options['buttonType']) && in_array( $options['buttonType'], $this->buttons ) ) {
+        if (isset($options['buttonType']) && in_array( $options['buttonType'], $this->buttons )) {
             $classes[] = 'btn-' . $options['buttonType'];
             unset($options['buttonType']);
         }
