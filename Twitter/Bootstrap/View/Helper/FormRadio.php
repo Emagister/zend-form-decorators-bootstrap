@@ -48,8 +48,7 @@ class Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormEleme
      *
      * @return string The radio buttons XHTML.
      */
-    public function formRadio($name, $value = null, $attribs = null,
-        $options = null, $listsep = '')
+    public function formRadio($name, $value = null, $attribs = null, $options = null, $listsep = '')
     {
         $info = $this->_getInfo($name, $value, $attribs, $options, $listsep);
         extract($info); // name, value, attribs, options, listsep, disable
@@ -78,6 +77,7 @@ class Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormEleme
         }
 
         $label_attribs['class'] .= ' radio';
+        $label_attribs['class'] = trim($label_attribs['class']);
 
         $labelPlacement = 'append';
         foreach ($label_attribs as $key => $val) {
@@ -116,11 +116,11 @@ class Twitter_Bootstrap_View_Helper_FormRadio extends Zend_View_Helper_FormEleme
 
         // Set up the filter - Alnum + hyphen + underscore
         // require_once 'Zend/Filter/PregReplace.php';
-        $pattern = @preg_match('/\pL/u', 'a') 
+        $pattern = @preg_match('/\pL/u', 'a')
             ? '/[^\p{L}\p{N}\-\_]/u'    // Unicode
             : '/[^a-zA-Z0-9\-\_]/';     // No Unicode
         $filter = new Zend_Filter_PregReplace($pattern, "");
-        
+
         // add radio buttons to the list.
         foreach ($options as $opt_value => $opt_label) {
 

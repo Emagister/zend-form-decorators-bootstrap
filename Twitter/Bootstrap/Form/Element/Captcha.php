@@ -40,8 +40,8 @@ class Twitter_Bootstrap_Form_Element_Captcha extends Zend_Form_Element_Captcha
             $this->removeDecorator('ViewHelper');
 
             $decorators = $this->getDecorators();
-            $decorator  = $captcha->getDecorator();
-            $key        = get_class($this->_getDecorator($decorator, null));
+            $decorator = $captcha->getDecorator();
+            $key = get_class($this->_getDecorator($decorator, null));
 
             if (!empty($decorator) && !array_key_exists($key, $decorators)) {
                 array_unshift($decorators, $decorator);
