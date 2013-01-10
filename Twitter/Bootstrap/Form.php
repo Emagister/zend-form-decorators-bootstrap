@@ -35,12 +35,13 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     public function __construct($options = null)
     {
         $this->_initializePrefixes();
+
+        parent::__construct($options);
+
         $this->setDecorators(array(
             'FormElements',
             'Form'
         ));
-
-        parent::__construct($options);
     }
 
     protected function _initializePrefixes()
@@ -50,26 +51,26 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             if (null !== $this->getView())
             {
                 $this->getView()->addHelperPath(
-                	'Twitter/Bootstrap/View/Helper',
-                	'Twitter_Bootstrap_View_Helper'
+                    'Twitter/Bootstrap/View/Helper',
+                    'Twitter_Bootstrap_View_Helper'
                 );
             }
 
             $this->addPrefixPath(
-            	'Twitter_Bootstrap_Form_Element',
-            	'Twitter/Bootstrap/Form/Element',
-            	'element'
+                'Twitter_Bootstrap_Form_Element',
+                'Twitter/Bootstrap/Form/Element',
+                'element'
             );
 
             $this->addElementPrefixPath(
-            	'Twitter_Bootstrap_Form_Decorator',
-            	'Twitter/Bootstrap/Form/Decorator',
-            	'decorator'
+                'Twitter_Bootstrap_Form_Decorator',
+                'Twitter/Bootstrap/Form/Decorator',
+                'decorator'
             );
 
             $this->addDisplayGroupPrefixPath(
-            	'Twitter_Bootstrap_Form_Decorator',
-            	'Twitter/Bootstrap/Form/Decorator'
+                'Twitter_Bootstrap_Form_Decorator',
+                'Twitter/Bootstrap/Form/Decorator'
             );
 
             $this->setDefaultDisplayGroupClass('Twitter_Bootstrap_Form_DisplayGroup');
@@ -147,38 +148,38 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      */
     public function render(Zend_View_Interface $view = null) {
 
-    	/**
-    	 * Getting elements.
-    	 */
-    	$elements = $this->getElements();
+        /**
+         * Getting elements.
+         */
+        $elements = $this->getElements();
 
-    	foreach ($elements as $eachElement) {
+        foreach ($elements as $eachElement) {
 
-    		/**
-    		 * Removing label from buttons before render.
-    		 */
-    		if ($eachElement instanceof Zend_Form_Element_Submit) {
-    			$eachElement->removeDecorator('Label');
-    		}
+            /**
+             * Removing label from buttons before render.
+             */
+            if ($eachElement instanceof Zend_Form_Element_Submit) {
+                $eachElement->removeDecorator('Label');
+            }
 
-    		/**
-    		 * No decorators for hidden elements
-    		 */
-    		if( $eachElement instanceof Zend_Form_Element_Hidden ) {
-    			$eachElement->clearDecorators()->addDecorator('ViewHelper');
-    		}
+            /**
+             * No decorators for hidden elements
+             */
+            if( $eachElement instanceof Zend_Form_Element_Hidden ) {
+                $eachElement->clearDecorators()->addDecorator('ViewHelper');
+            }
 
-    		/**
-    		 * No decorators for hash elements
-    		 */
-    		if( $eachElement instanceof Zend_Form_Element_Hash ) {
-    			$eachElement->clearDecorators()->addDecorator('ViewHelper');
-    		}
-    	}
+            /**
+             * No decorators for hash elements
+             */
+            if( $eachElement instanceof Zend_Form_Element_Hash ) {
+                $eachElement->clearDecorators()->addDecorator('ViewHelper');
+            }
+        }
 
-    	/**
-    	 * Rendering.
-    	 */
-    	return parent::render($view);
+        /**
+         * Rendering.
+         */
+        return parent::render($view);
     }
 }

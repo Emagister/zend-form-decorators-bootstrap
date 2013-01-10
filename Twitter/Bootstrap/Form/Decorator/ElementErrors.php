@@ -28,19 +28,19 @@ class Twitter_Bootstrap_Form_Decorator_ElementErrors extends Zend_Form_Decorator
             return $content;
         }
 
-	    $options = $this->getOptions();
-	    $escape = true;
-	    if (isset($options['escape'])) {
-		    $escape = (bool) $options['escape'];
-	    }
+        $options = $this->getOptions();
+        $escape = true;
+        if (isset($options['escape'])) {
+            $escape = (bool) $options['escape'];
+        }
 
-	    $errors = $this->getElement()->getMessages();
-	    if ($escape) {
-		    $view = $this->getElement()->getView();
-		    foreach ($errors as $key => $message) {
-				$errors[$key] = $view->escape($message);
-		    }
-	    }
+        $errors = $this->getElement()->getMessages();
+        if ($escape) {
+            $view = $this->getElement()->getView();
+            foreach ($errors as $key => $message) {
+                $errors[$key] = $view->escape($message);
+            }
+        }
 
         $errormessage = trim(implode('. ', $errors));
 
