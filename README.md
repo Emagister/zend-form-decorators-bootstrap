@@ -116,7 +116,7 @@ echo $searchForm;
 // Navigation bar search form
 $mavbarSearchForm = new Twitter_Bootstrap_Form_Search(array(
     'renderInNavBar' => true,
-    'pullItRight'    => true
+    'pullItRight'    => true,
     'inputName'      => 'q',
     'submitLabel'    => 'Search!'
 ));
