@@ -18,13 +18,13 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Inline
 
         $this->_addClassNames('well');
 
-        $this->addElement('text', array(
+        $this->addElement('text', 'text', array(
             'placeholder'   => 'E-mail',
             'prepend'       => '@',
             'class'         => 'focused'
         ));
 
-        $this->addElement('password', array(
+        $this->addElement('password', 'password', array(
             'placeholder' => 'Password'
         ));
 
