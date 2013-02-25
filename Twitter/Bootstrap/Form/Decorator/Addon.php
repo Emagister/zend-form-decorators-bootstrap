@@ -23,7 +23,7 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
 
     /**
      *
-     * @param  string $content
+     * @param string $content
      * @return string
      */
     public function render ($content)
@@ -103,7 +103,6 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
     protected function _renderElement (Zend_Form_Element $element)
     {
         $element->setDecorators(array('ViewHelper'));
-
         return trim($element->render($this->getElement()->getView()));
     }
 }

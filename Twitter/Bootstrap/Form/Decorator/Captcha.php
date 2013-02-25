@@ -51,7 +51,6 @@ class Twitter_Bootstrap_Form_Decorator_Captcha extends Zend_Form_Decorator_Captc
                 $content = $content . $separator . $markup;
                 break;
         }
-
         return $content;
     }
 
