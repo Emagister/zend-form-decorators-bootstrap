@@ -44,8 +44,8 @@ class Application_View_Helper_ShowAlert extends Zend_View_Helper_Abstract
 		if ( $messages instanceof Zend_Exception ) {
 			$content .= "<p class=\"nomargin\">" . $messages->getMessage() . "</p>";
 		} elseif ( is_array( $messages ) && count( $messages ) > 0 ) {
-			foreach ($messages as $error) {
-				$content .= "<p class=\"nomargin\">{$error}</p>";
+			foreach ($messages as $message) {
+				$content .= "<p class=\"nomargin\">{$message}</p>";
 			}
 		} else {
 			$content .= "<p class=\"nomargin\">{$messages}</p>";
