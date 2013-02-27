@@ -75,6 +75,11 @@ class Twitter_Bootstrap_Form_Decorator_FormElements extends Zend_Form_Decorator_
                 $class = $item->getAttrib('class');
                 $item->setAttrib('class', $class . ' disabled');
             }
+		
+            // Check if the element is required
+            if ($item instanceof Zend_Form_Element && $item->isRequired()) {
+                $item->setAttrib('required', 'required');
+            }	
 
             $items[] = $item->render();
 
