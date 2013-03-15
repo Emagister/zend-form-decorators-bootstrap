@@ -41,7 +41,7 @@ class Twitter_Bootstrap_View_Helper_FormFile extends Zend_View_Helper_FormFile
 
         // is it disabled?
         $disabled = '';
-        if ($disable) {
+        if ($disabled) {
             $attribs['class'] .= ' disabled';
             $disabled = ' disabled="disabled"';
         }
