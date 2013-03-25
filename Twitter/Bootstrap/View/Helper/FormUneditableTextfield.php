@@ -37,7 +37,6 @@ class Twitter_Bootstrap_View_Helper_FormUneditableTextfield extends Zend_View_He
     {
         $attribs['class'] .= ' uneditable-input';
         $attribs['class'] = trim($attribs['class']);
-
         return '<span '. $this->_htmlAttribs($attribs) .'>' . $this->view->escape($value) . '</span>';
     }
 }
