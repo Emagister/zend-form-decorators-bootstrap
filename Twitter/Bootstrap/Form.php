@@ -36,12 +36,12 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     {
         $this->_initializePrefixes();
 
-        parent::__construct($options);
-
         $this->setDecorators(array(
             'FormElements',
             'Form'
         ));
+
+        parent::__construct($options);
     }
 
     protected function _initializePrefixes()
