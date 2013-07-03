@@ -40,7 +40,7 @@ class Twitter_Bootstrap_Form_Element_File extends Zend_Form_Element_File
      * Checks if a file decorator has been added to the decorators
      * stack
      */
-    private function _existsFileDecorator()
+    protected function _existsFileDecorator()
     {
         foreach ($this->getDecorators() as $decorator) {
             if ($decorator instanceof Zend_Form_Decorator_Marker_File_Interface) {
