@@ -154,6 +154,10 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         $elements = $this->getElements();
 
         foreach ($elements as $eachElement) {
+            
+            if($eachElement->isRequired()){
+            	$eachElement->setAttrib('required','');
+            }
 
             /**
              * Removing label from buttons before render.
