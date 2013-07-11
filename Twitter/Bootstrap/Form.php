@@ -155,8 +155,8 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
         foreach ($elements as $eachElement) {
             
-            if($eachElement->isRequired()){
-            	$eachElement->setAttrib('required','');
+            if ($eachElement->isRequired()) {
+                $eachElement->setAttrib('required', '');
             }
 
             /**
