@@ -155,6 +155,10 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
         foreach ($elements as $eachElement) {
             
+            /**
+             * Add required attribute to required elements
+             * https://github.com/manticorp
+             */
             if ($eachElement->isRequired()) {
                 $eachElement->setAttrib('required', '');
             }
