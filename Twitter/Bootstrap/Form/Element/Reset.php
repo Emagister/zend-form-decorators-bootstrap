@@ -1,6 +1,6 @@
 <?php
 /**
- * A form button submit definition
+ * A form reset submit definition
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
@@ -9,14 +9,14 @@
  */
 
 /**
- * A form submit button
+ * A form reset button
  *
  * @category Forms
  * @package Twitter_Bootstrap_Form
  * @subpackage Element
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Twitter_Bootstrap_Form_Element_Submit extends Zend_Form_Element_Submit
+class Twitter_Bootstrap_Form_Element_Reset extends Zend_Form_Element_Reset
 {
     const BUTTON_PRIMARY = 'primary';
     const BUTTON_INFO = 'info';

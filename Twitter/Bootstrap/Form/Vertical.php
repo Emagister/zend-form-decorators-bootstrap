@@ -32,8 +32,8 @@ class Twitter_Bootstrap_Form_Vertical extends Twitter_Bootstrap_Form
             array('ViewHelper'),
             array('Addon'),
             array('ElementErrors'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('Label', array('class' => 'control-label')),
+            array('Description', array('tag' => 'span', 'class' => 'help-block')),
+            array('Label'),
             array('Wrapper')
         ));
         
