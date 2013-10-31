@@ -67,7 +67,7 @@ class Twitter_Bootstrap_Form_Decorator_FormElements extends Zend_Form_Decorator_
             // Check if has errors
             if ($item instanceof Zend_Form_Element && $item->hasErrors()) {
                 $class = $item->getAttrib('class');
-                $item->setAttrib('class', $class . ' error');
+                $item->setAttrib('class', $class . ' has-error');
             }
 
             // Check if the element is disabled

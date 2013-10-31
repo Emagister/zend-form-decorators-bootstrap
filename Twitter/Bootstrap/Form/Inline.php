@@ -28,10 +28,27 @@ class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
         $this->setElementDecorators(array(
             array('FieldSize'),
             array('ViewHelper'),
-            array('Description', array('tag' => 'p', 'class' => 'help-block')),
-            array('Addon')
+            array('Description', array('tag' => 'span', 'class' => 'help-block')),
+            array('Addon'),
+            array('ElementErrors'),
+            array('Label', array('class' => 'sr-only')),
+            array('Wrapper')
         ));
         
         parent::__construct($options);
+    }
+    
+    public function render(Zend_View_Interface $view = null) {
+        foreach ($this->getElements() as $element) {
+            $label = $element->getLabel();
+            if(!empty($label)) {
+                $element->setAttrib('placeholder', $label);
+            }
+        }
+        
+        /**
+         * Rendering.
+         */
+        return parent::render($view);
     }
 }
