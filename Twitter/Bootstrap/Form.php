@@ -26,7 +26,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     const DISPOSITION_SEARCH     = 'search';
 
     protected $_prefixesInitialized = false;
-    
+
     protected $_labelColSize = 2;
     protected $_fieldColSize = 3;
 
@@ -45,14 +45,13 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         ));
 
         parent::__construct($options);
-        
+
         $this->_initializeFieldColSize();
     }
-    
+
     protected function _initializeFieldColSize()
     {
-        foreach ($this->getElements() as $element)
-        {
+        foreach ($this->getElements() as $element) {
             if(!$element instanceof Zend_Form_Element_Submit
                     and !$element instanceof Zend_Form_Element_Button
                     and !$element instanceof Zend_Form_Element_Image
@@ -70,10 +69,8 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
 
     protected function _initializePrefixes()
     {
-        if (!$this->_prefixesInitialized)
-        {
-            if (null !== $this->getView())
-            {
+        if (!$this->_prefixesInitialized) {
+            if (null !== $this->getView()) {
                 $this->getView()->addHelperPath(
                     'Twitter/Bootstrap/View/Helper',
                     'Twitter_Bootstrap_View_Helper'
@@ -127,13 +124,13 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      * base form
      *
      * @param Zend_Form_Element $element
-     * @param string $classNames
+     * @param string            $classNames
      */
     protected function _addClassNames($classNames, Zend_Form_Element $element = null)
     {
         if (null !== $element) {
             $classes = $this->_getClassNames($element);
-        }else {
+        } else {
             $element = $this;
             $classes = $this->_getClassNames();
         }
@@ -159,7 +156,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      * Extract the class names from a Zend_Form_Element if given or from the
      * base form
      *
-     * @param Zend_Form_Element $element
+     * @param  Zend_Form_Element $element
      * @return array
      */
     protected function _getClassNames(Zend_Form_Element $element = null)
@@ -177,15 +174,15 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
      * @param  Zend_View_Interface $view
      * @return string
      */
-    public function render(Zend_View_Interface $view = null) {
-
+    public function render(Zend_View_Interface $view = null)
+    {
         /**
          * Getting elements.
          */
         $elements = $this->getElements();
 
         foreach ($elements as $eachElement) {
-            
+
             /**
              * Add required attribute to required elements
              * https://github.com/manticorp
@@ -204,14 +201,14 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             /**
              * No decorators for hidden elements
              */
-            if( $eachElement instanceof Zend_Form_Element_Hidden ) {
+            if ($eachElement instanceof Zend_Form_Element_Hidden) {
                 $eachElement->clearDecorators()->addDecorator('ViewHelper');
             }
 
             /**
              * No decorators for hash elements
              */
-            if( $eachElement instanceof Zend_Form_Element_Hash ) {
+            if ($eachElement instanceof Zend_Form_Element_Hash) {
                 $eachElement->clearDecorators()->addDecorator('ViewHelper');
             }
         }
@@ -219,24 +216,25 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         /**
          * Rendering.
          */
+
         return parent::render($view);
     }
-    
+
     protected function _getLabelColSize()
     {
         return $this->_labelColSize;
     }
-    
+
     protected function _getFieldColSize()
     {
         return $this->_fieldColSize;
     }
-    
+
     public function setLabelColSize($size)
     {
         $this->_labelColSize = intval($size);
     }
-    
+
     public function setFieldColSize($size)
     {
         $this->_fieldColSize = intval($size);

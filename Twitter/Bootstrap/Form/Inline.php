@@ -22,7 +22,7 @@ class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
     public function __construct($options = null)
     {
         $this->_initializePrefixes();
-        
+
         $this->setDisposition(self::DISPOSITION_INLINE);
 
         $this->setElementDecorators(array(
@@ -34,21 +34,23 @@ class Twitter_Bootstrap_Form_Inline extends Twitter_Bootstrap_Form
             array('Label', array('class' => 'sr-only')),
             array('Wrapper')
         ));
-        
+
         parent::__construct($options);
     }
-    
-    public function render(Zend_View_Interface $view = null) {
+
+    public function render(Zend_View_Interface $view = null)
+    {
         foreach ($this->getElements() as $element) {
             $label = $element->getLabel();
-            if(!empty($label)) {
+            if (!empty($label)) {
                 $element->setAttrib('placeholder', $label);
             }
         }
-        
+
         /**
          * Rendering.
          */
+
         return parent::render($view);
     }
 }

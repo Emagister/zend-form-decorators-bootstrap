@@ -19,7 +19,7 @@
 class Twitter_Bootstrap_Form_Decorator_ElementErrors extends Zend_Form_Decorator_Abstract
 {
     /**
-     * @param string $content
+     * @param  string $content
      * @return string
      */
     public function render($content)
