@@ -34,6 +34,7 @@ class Twitter_Bootstrap_Form_DisplayGroup extends Zend_Form_DisplayGroup
             $this->addDecorator('FormElements')
                  ->addDecorator('Fieldset');
         }
+
         return $this;
     }
 

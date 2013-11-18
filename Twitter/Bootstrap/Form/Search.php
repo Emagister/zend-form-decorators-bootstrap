@@ -21,7 +21,7 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
     public function __construct($options = null)
     {
         $this->_initializePrefixes();
-        
+
         $this->setDisposition(self::DISPOSITION_SEARCH);
 
         $renderButton = true;
@@ -49,11 +49,11 @@ final class Twitter_Bootstrap_Form_Search extends Twitter_Bootstrap_Form_Inline
         if ($renderButton) {
             $buttonLabel = isset($options['submitLabel']) ? $options['submitLabel'] : 'Submit';
             $this->addElement('submit', 'submit', array(
-                'class' => 'btn',
+                'class' => 'btn btn-default',
                 'label' => $buttonLabel
             ));
         }
-        
+
         parent::__construct($options);
     }
 }

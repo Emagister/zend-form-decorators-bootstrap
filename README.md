@@ -1,7 +1,7 @@
 # Zend_Form decorators for Twitter's Bootstrap #
 
 This is a set of Zend_Form decorators and helpers that help to render the markup needed to display any Zend_Form as a
-[Twitter's Bootstrap](https://twitter.github.com/bootstrap) form.
+[Twitter's Bootstrap](http://getbootstrap.com/) form.
 
 ## This is cool stuff, but how? ##
 
@@ -164,13 +164,14 @@ order to set all the appropiate *class* names.
 To configure the look and feel of a submit button there are several options supported
 
 * __buttonType__ (*string*)
-  This option specifies the button type that will be rendered. Twitter Bootstrap 2.0.0 supports six button types out of the box
+  This option specifies the button type that will be rendered. Twitter Bootstrap 3 supports seven button types out of the box
   * __default__ (obviously, the default button style)
   * __primary__
   * __info__
   * __success__
   * __warning__
   * __danger__
+  * __link__
 
 * __disabled__ (*boolean*)
   If _true_, the submit button will be rendered as disabled.
@@ -339,7 +340,7 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
 
 ## Installation ##
 
-In order to use Bootstrap 2.0.0, the needed assets need to be installed in your assets directory. Make sure to install also the
+In order to use Bootstrap 3, the needed assets need to be installed in your assets directory. Make sure to install also the
 glyphicons properly. Once all this stuff has been installed, create/modify a layout view script and add a reference to the
 Bootstrap CSS.
 
@@ -367,3 +368,4 @@ So that's it. Now you can start creating forms and rendering them the way shown 
 * __rafalgalka__ <http://blog.modernweb.pl>
 * __lrobert__ <http://www.leerobert.ca>
 * __marcelaraujo__ <admin@marcelaraujo.me>
+* __mardagg666__ <https://github.com/Mardagg666>

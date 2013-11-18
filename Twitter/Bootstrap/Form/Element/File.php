@@ -33,6 +33,7 @@ class Twitter_Bootstrap_Form_Element_File extends Zend_Form_Element_File
             $this->setDecorators($decorators);
             $this->removeDecorator('ViewHelper');
         }
+
         return $this;
     }
 

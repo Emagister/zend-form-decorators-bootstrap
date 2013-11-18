@@ -21,7 +21,7 @@ class Twitter_Bootstrap_Form_Element_MultiCheckbox extends Zend_Form_Element_Mul
 {
     /**
      * The default separator (Changed to be nothing for bootstrap)
-     * 
+     *
      * @var string
      */
     protected $_separator = '';
@@ -31,7 +31,7 @@ class Twitter_Bootstrap_Form_Element_MultiCheckbox extends Zend_Form_Element_Mul
      *
      * @return Twitter_Bootstrap_Form_Element_Radio
      */
-    public function loadDefaultDecorators ()
+    public function loadDefaultDecorators()
     {
         return $this;
     }

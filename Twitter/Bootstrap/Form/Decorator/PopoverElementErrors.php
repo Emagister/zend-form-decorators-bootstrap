@@ -22,18 +22,18 @@ class Twitter_Bootstrap_Form_Decorator_PopoverElementErrors extends Zend_Form_De
 
     /**
      * Decorate content and/or elementRender the element
-     * 
-     * @param string $content            
+     *
+     * @param  string $content
      * @return string
      */
-    public function render ($content)
+    public function render($content)
     {
         if (! $this->getElement()->hasErrors()) {
             return $content;
         }
-        
+
         $errors = implode('<br/>', $this->getElement()->getMessages());
-        
+
         return '<span class="hasPopover" data-title="Error" data-content="' . $errors . '">' . $content . '</span>';
     }
 }

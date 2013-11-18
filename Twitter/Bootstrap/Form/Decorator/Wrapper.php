@@ -16,7 +16,7 @@
  * @subpackage Decorator
  * @author Christian Soronellas <csoronellas@emagister.com>
  */
-class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstract
+class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_HtmlTag
 {
     /**
      * Renders a form element decorating it with the Twitter's Bootstrap markup
@@ -27,8 +27,16 @@ class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_Abstr
      */
     public function render($content)
     {
-        $hasErrors = $this->getElement()->hasErrors();
+        $class = $this->getOption('class');
 
-        return '<div class="control-group' . (($hasErrors) ? ' error' : '') . '">' . $content . '</div>';
+        if (null === $class) {
+            $class = '';
+        }
+        $hasErrors = $this->getElement()->hasErrors() ? 'has-error' : '';
+        $class .= " form-group $hasErrors";
+
+        $this->setOption('class', $class);
+
+        return parent::render($content);
     }
 }
