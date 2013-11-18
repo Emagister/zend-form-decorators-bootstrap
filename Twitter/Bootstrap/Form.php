@@ -30,6 +30,9 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     protected $_labelColSize = 2;
     protected $_fieldColSize = 3;
 
+    public $_allowedColType = array('xs', 'sm', 'md', 'lg');
+    protected $_colType = 'lg';
+
     /**
      * Override the base form constructor.
      *
@@ -61,7 +64,7 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
             {
                 $this->_addClassNames(array(
                     'form-control',
-                    'col-lg-'.$this->_getFieldColSize()
+                    'col-'.$this->_getColType().'-'.$this->_getFieldColSize()
                 ), $element);
             }
         }
@@ -230,6 +233,11 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
         return $this->_fieldColSize;
     }
 
+    protected function _getColType()
+    {
+        return $this->_colType;
+    }
+
     public function setLabelColSize($size)
     {
         $this->_labelColSize = intval($size);
@@ -238,5 +246,12 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
     public function setFieldColSize($size)
     {
         $this->_fieldColSize = intval($size);
+    }
+
+    public function setColType($type)
+    {
+        if (in_array($type, $this->_allowedColType)) {
+            $this->_colType = $type;
+        }
     }
 }

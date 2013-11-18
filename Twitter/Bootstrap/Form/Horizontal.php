@@ -32,8 +32,8 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
             array('Addon'),
             array('ElementErrors'),
             array('Description', array('tag' => 'span', 'class' => 'help-block')),
-            array('HtmlTag', array('tag' => 'div', 'class' => 'col-lg-' . $this->_getFieldColSize())),
-            array('Label', array('class' => 'col-lg-' . $this->_getLabelColSize() . ' control-label')),
+            array('HtmlTag', array('tag' => 'div', 'class' => 'col-'.$this->_getColType().'-' . $this->_getFieldColSize())),
+            array('Label', array('class' => 'col-' . $this->_getColType() . '-' . $this->_getLabelColSize() . ' control-label')),
             array('Wrapper')
         ));
 
@@ -53,7 +53,7 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
                 $decorators = $element->getDecorators();
                 $htmlTagDecorator = $decorators['Zend_Form_Decorator_HtmlTag'];
                 $class = $htmlTagDecorator->getOption('class');
-                $htmlTagDecorator->setOption('class', "col-lg-offset-" . $this->_getLabelColSize() . " $class");
+                $htmlTagDecorator->setOption('class', "col-" . $this->_getColType() . "-offset-" . $this->_getLabelColSize() . " $class");
                 $element->addDecorator($htmlTagDecorator);
             }
         }

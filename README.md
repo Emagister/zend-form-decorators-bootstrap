@@ -1,7 +1,7 @@
 # Zend_Form decorators for Twitter's Bootstrap #
 
 This is a set of Zend_Form decorators and helpers that help to render the markup needed to display any Zend_Form as a
-[Twitter's Bootstrap](https://twitter.github.com/bootstrap) form.
+[Twitter's Bootstrap](http://getbootstrap.com/) form.
 
 ## This is cool stuff, but how? ##
 
