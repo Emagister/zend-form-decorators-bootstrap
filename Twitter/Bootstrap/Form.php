@@ -190,4 +190,9 @@ abstract class Twitter_Bootstrap_Form extends Zend_Form
          */
         return parent::render($view);
     }
+
+    public function __sleep()
+    {
+        return array();
+    }
 }
