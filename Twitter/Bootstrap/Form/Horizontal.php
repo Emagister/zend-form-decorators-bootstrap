@@ -24,7 +24,6 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
 
         $this->setDisposition(self::DISPOSITION_HORIZONTAL);
 
-        parent::__construct($options);
 
         $this->setElementDecorators(array(
             array('FieldSize'),
@@ -37,6 +36,7 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
             array('Wrapper')
         ));
 
+        parent::__construct($options);
 
         foreach ($this->getElements() as $element) {
             if ($element instanceof Zend_Form_Element_Checkbox) {
