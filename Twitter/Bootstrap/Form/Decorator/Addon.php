@@ -20,6 +20,8 @@
  */
 class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstract
 {
+    const GROUP_CLASS = 'input-group';
+    const ADDON_CLASS = 'input-group-addon';
 
     /**
      *
@@ -35,22 +37,14 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
             return $content;
         }
 
-        $placement = '';
-
         // Prepare the prepend
         if (null !== $prepend) {
-            $placement .= 'input-prepend ';
-            $prependAddOnClass = 'add-on';
-
-            $this->_prepareAddon($prepend, $prependAddOnClass);
+            $this->_prepareAddon($prepend);
         }
 
         // Prepare the append
         if (null !== $append) {
-            $placement .= 'input-append ';
-            $appendAddOnClass = 'add-on';
-
-            $this->_prepareAddon($append, $appendAddOnClass);
+            $this->_prepareAddon($append);
         }
 
         // Unset the prepend and append data
@@ -58,7 +52,7 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
         $this->getElement()->setAttrib('append', null);
 
         // Return the rendered input field
-        return '<div class="' . $placement . '">' .
+        return '<div class="' . self::GROUP_CLASS . '">' .
                  ((null !== $prepend) ? $prepend : '') . trim($content) .
                  ((null !== $append) ? $append : '') . '</div>';
     }
@@ -70,7 +64,7 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
      */
     protected function _prepareAddon (&$addon)
     {
-        $addonClass = 'add-on';
+        $addonClass = self::ADDON_CLASS;
 
         // Convert into a Zend_Config object if we recieved an array
         if (is_array($addon)) {
@@ -99,6 +93,7 @@ class Twitter_Bootstrap_Form_Decorator_Addon extends Zend_Form_Decorator_Abstrac
      * Renders an element with only the view helper decorator
      *
      * @param Zend_Form_Element $element
+     * @return string
      */
     protected function _renderElement (Zend_Form_Element $element)
     {
