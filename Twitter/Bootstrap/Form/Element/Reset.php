@@ -26,7 +26,7 @@ class Twitter_Bootstrap_Form_Element_Reset extends Zend_Form_Element_Reset
     const BUTTON_INVERSE = 'inverse';
     const BUTTON_LINK = 'link';
 
-    protected $buttons = array(
+    protected $_buttons = array(
         self::BUTTON_DANGER,
         self::BUTTON_INFO,
         self::BUTTON_PRIMARY,
@@ -52,7 +52,7 @@ class Twitter_Bootstrap_Form_Element_Reset extends Zend_Form_Element_Reset
         $classes = explode(' ', $options['class']);
         $classes[] = 'btn btn-default';
 
-        if (isset($options['buttonType']) && in_array( $options['buttonType'], $this->buttons )) {
+        if (isset($options['buttonType']) && in_array( $options['buttonType'], $this->_buttons )) {
             $classes[] = 'btn-' . $options['buttonType'];
             unset($options['buttonType']);
         }
