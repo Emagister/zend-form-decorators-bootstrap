@@ -35,7 +35,7 @@ class Twitter_Bootstrap_Form_Decorator_Wrapper extends Zend_Form_Decorator_HtmlT
         $hasErrors = $this->getElement()->hasErrors() ? 'has-error' : '';
         $class .= " form-group $hasErrors";
 
-        $this->setOption('class', $class);
+        $this->setOption('class', trim($class));
 
         return parent::render($content);
     }
