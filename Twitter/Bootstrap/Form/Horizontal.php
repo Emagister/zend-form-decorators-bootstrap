@@ -55,6 +55,8 @@ class Twitter_Bootstrap_Form_Horizontal extends Twitter_Bootstrap_Form
                 $class = $htmlTagDecorator->getOption('class');
                 $htmlTagDecorator->setOption('class', "col-" . $this->_getColType() . "-offset-" . $this->_getLabelColSize() . " $class");
                 $element->addDecorator($htmlTagDecorator);
+            } elseif($element instanceof Zend_Form_Element_File) {
+                $element->addDecorator('File');
             }
         }
 
