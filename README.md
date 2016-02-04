@@ -307,9 +307,9 @@ class My_Bootstrap_Form extends Twitter_Bootstrap_Form_Horizontal
         // A submit button
         $submitButton = $this->createElement('button', 'addButton', array(
             'label' => 'Add'
-        );
+        ));
         
-        $this->addElement('text', 'input2', array(
+        $this->addElement('submit', 'submit', array(
             'label' => '2nd E-mail',
             'prepend' => $submitButton
         ));
