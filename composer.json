@@ -21,6 +21,17 @@
          "email":"php@emagister.com",
          "homepage":"http://engineering.emagister.com",
          "role":"Developer"
+      },{
+         "name":"Rob Strong",
+         "email":"rstrong@pica9.com",
+         "homepage":"https://github.com/rstrong-pica9",
+         "role":"Developer"
+      },
+       {
+         "name":"mkuh",
+         "email":"github@mkuh.de",
+         "homepage":"http://mkuh.com",
+         "role":"Developer"
       }
    ],
    "require":{
