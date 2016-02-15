@@ -1,16 +1,18 @@
 {
-   "name":"emagister/zend-form-decorators-bootstrap",
-   "description":"Zend_Form decorators for Twitter's Bootstrap UI",
+   "name":"mkuh/zend-form-decorators-bootstrap",
+   "description":"Zend_Form decorators for Twitter's Bootstrap 3 UI",
    "keywords":[
       "zend",
       "zend form",
       "zend form decorators",
       "twitter",
       "bootstrap",
+      "bootstrap3",
+      "bootstrap checkbox",
       "twitter bootstrap"
    ],
    "type":"library",
-   "homepage":"https://emagister.github.com/zend-form-decorators-bootstrap",
+   "homepage":"https://mkuh.github.com/zend-form-decorators-bootstrap",
    "version":"dev-master",
    "license":"MIT",
    "authors":[
@@ -22,7 +24,7 @@
       }
    ],
    "require":{
-      "php":">=5.2.4"
+      "php":">=5.5.30"
     },
     "autoload":{
         "psr-0":{
